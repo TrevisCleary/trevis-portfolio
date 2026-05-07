@@ -45,7 +45,7 @@ function Contact() {
         </a>
 
         <a
-          href="mailto:trevis.cleary@gmail.com"
+          href="mailto:connect@treviscleary.com"
           className="flex items-center gap-4 bg-white text-black hover:opacity-90 transition rounded-2xl px-8 py-5 font-semibold"
         >
           <FaEnvelope size={20} />
