@@ -1,50 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
+
 function App() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#0f172a",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        fontFamily: "Arial",
-        padding: "2rem",
-        textAlign: "center"
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "4rem",
-          marginBottom: "1rem"
-        }}
-      >
-        Trevis Cleary
-      </h1>
+    <BrowserRouter>
+      <div className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
 
-      <h2
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: "normal",
-          opacity: 0.8
-        }}
-      >
-        Vice President of Technical Services and Analytics
-      </h2>
-
-      <p
-        style={{
-          maxWidth: "700px",
-          marginTop: "2rem",
-          lineHeight: "1.8",
-          fontSize: "1.1rem"
-        }}
-      >
-        Healthcare IT leader focused on automation, infrastructure,
-        analytics, systems modernization, and operational technology.
-      </p>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
