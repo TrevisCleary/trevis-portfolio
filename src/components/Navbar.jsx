@@ -1,44 +1,61 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
-  return (
-    <nav className="flex items-center justify-between px-10 py-6 border-b border-slate-800">
-      <Link
-        to="/"
-        className="text-2xl font-bold"
-      >
-        Trevis Cleary
-      </Link>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      <div className="flex gap-8 text-slate-300">
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects" },
+    { name: "Resume", path: "/resume" },
+    { name: "Contact", path: "/contact" }
+  ];
+
+  return (
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 border-b border-slate-800">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
         <Link
           to="/"
-          className="hover:text-white transition"
+          className="text-2xl font-bold tracking-tight"
         >
-          Home
+          Trevis Cleary
         </Link>
 
-        <Link
-          to="/projects"
-          className="hover:text-white transition"
-        >
-          Projects
-        </Link>
+        <div className="hidden md:flex items-center gap-8 text-slate-300">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="hover:text-white transition duration-200"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
 
-        <Link
-          to="/resume"
-          className="hover:text-white transition"
+        <button
+          className="md:hidden text-slate-300"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          Resume
-        </Link>
-
-        <Link
-          to="/contact"
-          className="hover:text-white transition"
-        >
-          Contact
-        </Link>
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="md:hidden border-t border-slate-800 bg-slate-950 px-6 py-6 flex flex-col gap-6 text-slate-300">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="hover:text-white transition"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
