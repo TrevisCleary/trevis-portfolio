@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Projects from "./pages/Projects";
 import DischargeTracker from "./pages/projects/DischargeTracker";
 import Resume from "./pages/Resume";
@@ -16,6 +17,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/discharge-tracker" element={<DischargeTracker />} />
           <Route path="/resume" element={<Resume />} />

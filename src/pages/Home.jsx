@@ -79,36 +79,65 @@ function Home() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col items-center justify-center text-center px-6 py-36"
+        className="px-6 md:px-10 py-24 md:py-32"
       >
-        <p className="uppercase tracking-[0.3em] text-slate-400 text-sm mb-6">
-          Technical Leadership • Automation • Infrastructure
-        </p>
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-20 items-center">
+          <div>
+            <p className="uppercase tracking-[0.3em] text-slate-400 text-sm mb-6">
+              Technical Leadership • Automation • Infrastructure
+            </p>
 
-        <h1 className="text-5xl md:text-7xl font-bold max-w-6xl leading-tight">
-          Building modern healthcare technology and operational systems.
-        </h1>
+            <h1 className="text-5xl md:text-7xl font-bold max-w-5xl leading-tight">
+              Building modern healthcare technology and operational systems.
+            </h1>
 
-        <p className="mt-8 text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
-          Vice President of Technical Services and Analytics focused on
-          infrastructure modernization, automation engineering,
-          operational technology, and scalable systems strategy.
-        </p>
+            <p className="mt-8 text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
+              Vice President of Technical Services and Analytics focused on
+              infrastructure modernization, automation engineering,
+              operational technology, and scalable systems strategy.
+            </p>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-12">
-          <Link
-            to="/projects"
-            className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+            <div className="flex flex-wrap gap-6 mt-12">
+              <Link
+                to="/projects"
+                className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+              >
+                View Projects
+              </Link>
+
+              <Link
+                to="/resume"
+                className="border border-slate-700 px-8 py-4 rounded-2xl hover:bg-slate-900 transition"
+              >
+                Resume
+              </Link>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 28, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+            className="relative max-w-md mx-auto lg:mr-0"
           >
-            View Projects
-          </Link>
+            <div className="absolute -inset-6 rounded-[2rem] bg-slate-700/20 blur-3xl" />
+            <div className="relative rounded-3xl border border-slate-800 bg-slate-900/80 p-3 shadow-2xl shadow-black/30">
+              <img
+                src="/images/trevis-cleary.jpg"
+                alt="Trevis Cleary"
+                className="aspect-[4/5] w-full rounded-2xl object-cover"
+              />
+            </div>
 
-          <Link
-            to="/resume"
-            className="border border-slate-700 px-8 py-4 rounded-2xl hover:bg-slate-900 transition"
-          >
-            Resume
-          </Link>
+            <div className="absolute -bottom-5 left-6 right-6 rounded-2xl border border-slate-800 bg-slate-950/90 px-5 py-4 shadow-xl shadow-black/30 backdrop-blur">
+              <p className="text-sm font-semibold text-slate-200">
+                Technical Services & Analytics
+              </p>
+              <p className="text-xs text-slate-500 mt-1">
+                Healthcare systems, automation, and operational technology
+              </p>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
