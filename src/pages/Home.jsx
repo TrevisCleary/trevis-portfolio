@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   const skills = [
@@ -69,6 +70,10 @@ function Home() {
 
   return (
     <div>
+      <Helmet>
+        <title>Trevis Cleary | Technical Leadership & Automation</title>
+      </Helmet>
+
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

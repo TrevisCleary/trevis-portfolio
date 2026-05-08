@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 function Projects() {
   const projects = [
   {
@@ -23,6 +25,10 @@ function Projects() {
 
   return (
     <div className="px-10 py-20">
+      <Helmet>
+        <title>Projects | Trevis Cleary</title>
+      </Helmet>
+
       <h1 className="text-5xl font-bold mb-12">
         Projects
       </h1>

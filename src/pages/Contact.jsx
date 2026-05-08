@@ -4,9 +4,15 @@ import {
   FaEnvelope
 } from "react-icons/fa";
 
+import { Helmet } from "react-helmet-async";
+
 function Contact() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-24">
+      <Helmet>
+        <title>Contact | Trevis Cleary</title>
+      </Helmet>
+
       <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-6">
         Contact
       </p>
