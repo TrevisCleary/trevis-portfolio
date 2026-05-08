@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import DischargeTracker from "./pages/projects/DischargeTracker";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/discharge-tracker" element={<DischargeTracker />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

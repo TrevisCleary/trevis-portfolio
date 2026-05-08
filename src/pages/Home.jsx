@@ -9,6 +9,7 @@ import {
 
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 function Home() {
   const skills = [
@@ -95,13 +96,19 @@ function Home() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mt-12">
-          <button className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+          <Link
+            to="/projects"
+            className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+          >
             View Projects
-          </button>
+          </Link>
 
-          <button className="border border-slate-700 px-8 py-4 rounded-2xl hover:bg-slate-900 transition">
+          <Link
+            to="/resume"
+            className="border border-slate-700 px-8 py-4 rounded-2xl hover:bg-slate-900 transition"
+          >
             Resume
-          </button>
+          </Link>
         </div>
       </motion.section>
 
@@ -178,12 +185,12 @@ function Home() {
               Featured Projects
             </h2>
 
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="text-slate-400 hover:text-white transition"
             >
               View All →
-            </a>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">

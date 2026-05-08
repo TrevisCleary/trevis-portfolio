@@ -35,21 +35,26 @@ function Projects() {
 
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-  <Link
-    to={`/projects/${project.slug}`}
-    key={index}
-  >
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-slate-600 hover:-translate-y-1 transition duration-300">
-      <h2 className="text-2xl font-semibold mb-4">
-        {project.title}
-      </h2>
+          <div
+            key={index}
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-slate-600 hover:-translate-y-1 transition duration-300"
+          >
+            <h2 className="text-2xl font-semibold mb-4">
+              {project.title}
+            </h2>
 
-      <p className="text-slate-400 leading-relaxed">
-        {project.description}
-      </p>
-    </div>
-  </Link>
-))}
+            <p className="text-slate-400 leading-relaxed">
+              {project.description}
+            </p>
+
+            <Link
+              to={`/projects/${project.slug}`}
+              className="inline-flex items-center justify-center mt-8 border border-slate-700 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-200 hover:bg-slate-800 transition"
+            >
+              View Case Study
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
