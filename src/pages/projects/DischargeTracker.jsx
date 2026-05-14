@@ -4,15 +4,14 @@ import {
   CheckCircle2,
   ClipboardList,
   Database,
+  Download,
   ExternalLink,
   FileSearch,
-  Gauge,
   GitBranch,
-  Layers,
-  LineChart,
   LockKeyhole,
-  Network,
-  Power,
+  MessageSquareText,
+  MonitorPlay,
+  ShieldCheck,
   Workflow,
   X,
   ZoomIn
@@ -25,206 +24,190 @@ function DischargeTracker() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const technologies = [
-    "Power Apps",
-    "Dataverse",
-    "SharePoint",
-    "Power Automate",
-    "PowerShell",
-    "Microsoft Graph",
-    "Tenant User Sync",
-    "Permission Management"
+    "React",
+    "Vite",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Microsoft Entra ID",
+    "MSAL",
+    "Power Automate"
   ];
 
   const features = [
     {
-      icon: <ClipboardList size={24} />,
-      title: "Discharge Workflow Management",
+      icon: <Workflow size={24} />,
+      title: "Role-Based Review Workflow",
       description:
-        "Centralized discharge tracking across facility, regional, and enterprise operational views."
+        "Facility, regional, VP, CNO, and admin users see actions that match their workflow responsibility."
     },
     {
-      icon: <Activity size={24} />,
-      title: "Clinical Triggers",
+      icon: <ClipboardList size={24} />,
+      title: "Discharge Review Queue",
       description:
-        "Structured triggers surface clinical and operational signals that require timely follow-up."
+        "Folder-style tabs, filters, sorting, status chips, deleted record recovery, and facility-scoped visibility."
+    },
+    {
+      icon: <MessageSquareText size={24} />,
+      title: "Comments And Update Log",
+      description:
+        "Chat-style user comments are separated from system update history for cleaner collaboration and audit review."
     },
     {
       icon: <BarChart3 size={24} />,
-      title: "Metrics Reporting",
+      title: "Analytics Dashboard",
       description:
-        "Reporting views support trend analysis, performance review, and leadership visibility."
+        "Monthly analytics include clickable metrics, supporting record tables, CSV export, thresholds, and trend context."
     },
     {
-      icon: <Network size={24} />,
-      title: "Regional Analysis",
+      icon: <ShieldCheck size={24} />,
+      title: "Admin Portal",
       description:
-        "Multi-facility filtering helps regional leaders compare activity, bottlenecks, and outcomes."
+        "Administrative tools manage users, facilities, release notes, data sync, analytics thresholds, and demo reset."
     },
     {
-      icon: <FileSearch size={24} />,
-      title: "Audit Tracking",
+      icon: <MonitorPlay size={24} />,
+      title: "Demo Sandbox",
       description:
-        "Operational audit trails improve accountability and make workflow history easier to review."
-    },
-    {
-      icon: <Workflow size={24} />,
-      title: "Automated Routing",
-      description:
-        "Power Automate workflows coordinate notifications, status changes, and recurring process tasks."
-    },
-    {
-      icon: <LockKeyhole size={24} />,
-      title: "Tenant User & Permission Sync",
-      description:
-        "Microsoft Graph and automation routines align tenant users, roles, and application permissions with operational access needs."
-    },
-    {
-      icon: <Database size={24} />,
-      title: "External Data Ingest",
-      description:
-        "Automated ingest patterns support data movement from external systems into structured reporting and workflow layers."
+        "A launchable fictional-data environment supports portfolio walkthroughs and safe experimentation without production writes."
     }
   ];
 
   const stack = [
     {
-      icon: <Power size={24} />,
-      name: "Power Apps",
-      detail: "Responsive operational interface for facility and regional users."
+      icon: <Activity size={24} />,
+      name: "React + Vite",
+      detail: "Responsive application shell, record workflows, analytics views, admin screens, and demo launch experience."
     },
     {
       icon: <Database size={24} />,
-      name: "Dataverse",
-      detail: "Structured enterprise data layer for workflow entities, reporting relationships, and governed operational records."
-    },
-    {
-      icon: <Layers size={24} />,
-      name: "SharePoint",
-      detail: "Supporting document, list, and collaboration layer for operational workflow artifacts."
+      name: "PostgreSQL",
+      detail: "Durable storage for discharge records, comments, users, facilities, audit events, thresholds, and release notes."
     },
     {
       icon: <GitBranch size={24} />,
-      name: "Power Automate",
-      detail: "Workflow orchestration for alerts, process steps, system ingest, and data movement."
-    },
-    {
-      icon: <Workflow size={24} />,
-      name: "PowerShell",
-      detail: "Administrative automation for repeatable support, scheduled maintenance, and external system processing."
+      name: "Express API",
+      detail: "Server endpoints for bootstrap, workflow mutations, admin management, data reloads, audit, and support."
     },
     {
       icon: <LockKeyhole size={24} />,
-      name: "Microsoft Graph",
-      detail: "Microsoft 365 integration for tenant user synchronization, permission management, and identity-aware automation."
+      name: "Microsoft Entra",
+      detail: "MSAL-based authentication with API scopes and role-aware application access."
     },
     {
-      icon: <BarChart3 size={24} />,
-      name: "External Reporting",
-      detail: "Reporting-ready data structures for operational analytics, regional views, and enterprise visibility."
+      icon: <Download size={24} />,
+      name: "SharePoint Migration",
+      detail: "CSV import and reload tooling translates legacy SharePoint list extracts into normalized database records."
+    },
+    {
+      icon: <MessageSquareText size={24} />,
+      name: "Power Automate",
+      detail: "HTTP-triggered notification flow routes support, demo, developer, and production failure messages."
     }
   ];
 
   const gallery = [
     {
-      image: "/images/discharge-tracker/dashboard.png",
-      caption: "Enterprise discharge metrics dashboard",
+      image: "/images/discharge-tracker/current/01-login-demo-launch.png",
+      caption: "Login and demo launch",
       description:
-        "Executive-level dashboard view summarizing discharge activity, performance indicators, and operational trends for leadership review.",
-      className: "md:col-span-2 md:row-span-2"
+        "Production users authenticate through Microsoft Entra, while portfolio viewers can launch a fictional sandbox."
     },
     {
-      image: "/images/discharge-tracker/metrics.png",
-      caption: "Operational discharge analytics",
+      image: "/images/discharge-tracker/current/02-home-review-queue.png",
+      caption: "Home review queue",
       description:
-        "Metrics-focused reporting view used to evaluate discharge volume, workflow status, and operating patterns across the platform.",
-      className: ""
-    },
-    {
-      image: "/images/discharge-tracker/regional-analysis.png",
-      caption: "Regional clinical review workflow",
-      description:
-        "Regional analysis screen designed to help clinical and operational leaders review discharge activity across assigned facilities.",
-      className: ""
-    },
-    {
-      image: "/images/discharge-tracker/clinical-trigger.png",
-      caption: "Clinical trigger categorization",
-      description:
-        "Clinical trigger view supporting structured categorization, review, and follow-up for discharge-related clinical signals.",
-      className: ""
-    },
-    {
-      image: "/images/discharge-tracker/record-view.png",
-      caption: "Detailed discharge workflow management",
-      description:
-        "Detailed record view for managing discharge status, workflow context, audit fields, and operational follow-up details.",
+        "A role-aware discharge list with review tabs, lock status, record chips, and facility-scoped visibility.",
       className: "md:col-span-2"
     },
     {
-      image: "/images/discharge-tracker/total-discharges.png",
-      caption: "Multi-facility reporting visibility",
+      image: "/images/discharge-tracker/current/03-home-filter-sort.png",
+      caption: "Filter controls",
       description:
-        "Multi-facility reporting screen providing visibility into discharge totals and patterns across the enterprise footprint.",
-      className: ""
+        "Users can filter by resident, MRN, facility, discharge type, and saved preferences."
+    },
+    {
+      image: "/images/discharge-tracker/current/04-discharge-record-detail.png",
+      caption: "Discharge record detail",
+      description:
+        "The record view combines discharge details, review status, facility review, regional analysis, and comments.",
+      className: "md:col-span-2"
+    },
+    {
+      image: "/images/discharge-tracker/current/05-facility-review-edit.png",
+      caption: "Facility review edit state",
+      description:
+        "Context-aware fields, required comment validation, date-time inputs, and binary selections support facility review."
+    },
+    {
+      image: "/images/discharge-tracker/current/06-regional-vp-review.png",
+      caption: "Regional VP review",
+      description:
+        "Regional VP users can determine avoidability, optionally lock the record, and add final comments."
+    },
+    {
+      image: "/images/discharge-tracker/current/07-user-comments-update-log.png",
+      caption: "User comments and update log",
+      description:
+        "Conversation notes and system updates are separated into clean, reviewable streams."
+    },
+    {
+      image: "/images/discharge-tracker/current/08-analytics-dashboard.png",
+      caption: "Analytics dashboard",
+      description:
+        "Monthly analytics are grouped by outcome, workflow, operational, and clinical context.",
+      className: "md:col-span-2"
+    },
+    {
+      image: "/images/discharge-tracker/current/09-analytics-drilldown.png",
+      caption: "Metric drilldown",
+      description:
+        "Every metric opens a supporting data table with export to CSV for Excel analysis."
+    },
+    {
+      image: "/images/discharge-tracker/current/10-admin-portal.png",
+      caption: "Admin portal",
+      description:
+        "Administrators can manage users, facilities, release notes, thresholds, and data sync."
+    },
+    {
+      image: "/images/discharge-tracker/current/11-demo-admin-sandbox.png",
+      caption: "Demo admin sandbox",
+      description:
+        "Demo admin tools are functional but isolated from production data."
+    },
+    {
+      image: "/images/discharge-tracker/current/12-mobile-record-layout.png",
+      caption: "Mobile record layout",
+      description:
+        "The record workflow adapts to mobile with condensed headers and collapsible sections."
     }
   ];
 
   const impact = [
     {
-      metric: "80+",
-      label: "Healthcare Facilities Supported",
-      title: "80+ Healthcare Facilities Supported",
+      metric: "Full Stack",
+      label: "Modernization",
       description:
-        "Designed for enterprise-scale discharge visibility across a broad multi-facility healthcare environment.",
-      icon: <Network size={24} />
+        "Rebuilt a Power Apps workflow into an independent React, Express, and PostgreSQL application."
     },
     {
-      metric: "Multi-Role",
-      label: "Workflow Management",
-      title: "Multi-Role Workflow Management",
+      metric: "Role Aware",
+      label: "Workflow",
       description:
-        "Supports coordinated workflows for facility, regional, clinical, operational, and administrative stakeholders.",
-      icon: <Workflow size={24} />
+        "Permission-aware screens guide facility, regional, executive, and admin users through the correct review steps."
     },
     {
-      metric: "Centralized",
-      label: "Operational Reporting",
-      title: "Centralized Operational Reporting",
+      metric: "Traceable",
+      label: "Analytics",
       description:
-        "Consolidates discharge activity into structured views for daily management and leadership review.",
-      icon: <BarChart3 size={24} />
+        "Analytics can be drilled into the exact records behind each metric, reducing black-box reporting."
     },
     {
-      metric: "Enterprise",
-      label: "Analytics Visibility",
-      title: "Enterprise Analytics Visibility",
+      metric: "Safe Demo",
+      label: "Portfolio Mode",
       description:
-        "Improves access to external reporting, discharge trends, regional comparisons, and operational performance signals.",
-      icon: <LineChart size={24} />
-    },
-    {
-      metric: "Standardized",
-      label: "Discharge Tracking",
-      title: "Standardized Discharge Tracking",
-      description:
-        "Creates consistent workflow structure, status management, and discharge record handling across locations.",
-      icon: <CheckCircle2 size={24} />
-    },
-    {
-      metric: "Regional",
-      label: "Oversight & Audit Tracking",
-      title: "Regional Oversight & Audit Tracking",
-      description:
-        "Provides regional teams with review pathways, audit history, and clearer accountability for follow-up.",
-      icon: <FileSearch size={24} />
-    },
-    {
-      metric: "Tenant",
-      label: "User Sync & Permissions",
-      title: "Tenant User Sync & Permission Management",
-      description:
-        "Uses Microsoft tenant data and role-aware automation to keep application access aligned with operational responsibility.",
-      icon: <LockKeyhole size={24} />
+        "A fictional-data sandbox allows screenshots, demos, and testing without exposing or changing production data."
     }
   ];
 
@@ -238,18 +221,15 @@ function DischargeTracker() {
   return (
     <main className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
       <Helmet>
-        <title>Discharge Tracker | Trevis Cleary</title>
+        <title>DC Tracker | Trevis Cleary</title>
         <meta
           name="description"
-          content="Enterprise healthcare discharge management platform supporting operational workflows, analytics, and regional oversight across 80+ healthcare facilities."
+          content="Modern discharge review application with React, Express, PostgreSQL, Microsoft Entra authentication, analytics, and a demo sandbox."
         />
-        <meta
-          property="og:title"
-          content="Discharge Tracker | Trevis Cleary"
-        />
+        <meta property="og:title" content="DC Tracker | Trevis Cleary" />
         <meta
           property="og:description"
-          content="Enterprise healthcare discharge management platform supporting operational workflows, analytics, and regional oversight across 80+ healthcare facilities."
+          content="Role-based discharge review, analytics, admin tooling, and demo sandbox built with React, Express, and PostgreSQL."
         />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -260,66 +240,32 @@ function DischargeTracker() {
         transition={{ duration: 0.65 }}
         className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950/70 px-6 py-12 md:px-10 md:py-16 lg:px-12"
       >
-        <motion.div
-          aria-hidden="true"
-          animate={{ opacity: [0.35, 0.55, 0.35], scale: [1, 1.04, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -right-28 h-80 w-80 rounded-full bg-slate-700/20 blur-3xl"
-        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(163,230,53,0.14),transparent_34%),linear-gradient(135deg,rgba(15,23,42,0.94),rgba(2,6,23,0.78))]" />
 
-        <motion.div
-          aria-hidden="true"
-          animate={{ opacity: [0.18, 0.32, 0.18], scale: [1.04, 1, 1.04] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-36 -left-28 h-96 w-96 rounded-full bg-cyan-950/30 blur-3xl"
-        />
+        <div className="relative grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+          <div>
+            <p className="uppercase tracking-[0.3em] text-lime-300/80 text-sm mb-6">
+              Healthcare Workflow Case Study
+            </p>
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.12),transparent_34%),linear-gradient(135deg,rgba(15,23,42,0.92),rgba(2,6,23,0.72))]" />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
+              DC Tracker
+            </h1>
 
-        <div className="relative grid lg:grid-cols-[1.12fr_0.88fr] gap-10 lg:gap-14 items-stretch">
-          <div className="flex flex-col justify-center">
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.1 }}
-              className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-6"
-            >
-              Healthcare Systems Case Study
-            </motion.p>
+            <p className="mt-6 text-lg md:text-2xl text-slate-300 leading-relaxed max-w-4xl">
+              A role-based discharge review application for facility workflow,
+              regional oversight, analytics, and administrative control.
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.18 }}
-            >
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] max-w-5xl">
-                Discharge Tracker
-              </h1>
+            <p className="mt-7 text-base md:text-lg text-slate-400 leading-relaxed max-w-4xl">
+              DC Tracker began as a Power Apps solution and was converted into
+              a standalone application to remove SharePoint list threshold
+              constraints, reduce reliance on Dataverse, and create more room
+              for custom workflow, analytics, routing, and interface design
+              outside the Power Apps framework.
+            </p>
 
-              <p className="mt-6 text-lg md:text-2xl text-slate-300 leading-relaxed max-w-4xl">
-                Enterprise discharge management for clinical workflow,
-                regional oversight, and operational analytics.
-              </p>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.26 }}
-              className="mt-7 text-base md:text-lg text-slate-400 leading-relaxed max-w-4xl"
-            >
-              A production healthcare platform supporting discharge workflows,
-              Dataverse-backed operational data, Microsoft tenant user sync,
-              permission management, external reporting, automated system
-              ingest, and analytics across 80+ healthcare facilities.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.34 }}
-              className="flex flex-wrap gap-3 mt-10"
-            >
+            <div className="flex flex-wrap gap-3 mt-10">
               {technologies.map((technology) => (
                 <span
                   key={technology}
@@ -328,53 +274,32 @@ function DischargeTracker() {
                   {technology}
                 </span>
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          <motion.aside
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.28 }}
-            className="bg-slate-900/80 border border-slate-800 rounded-3xl p-7 md:p-9 flex flex-col justify-between shadow-2xl shadow-black/20 backdrop-blur"
+          <motion.button
+            type="button"
+            onClick={() => setSelectedImage(gallery[1])}
+            whileHover={{ y: -5 }}
+            className="group overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-3 text-left shadow-2xl shadow-black/20"
           >
-            <div>
-              <div className="h-12 w-12 rounded-2xl bg-white text-black flex items-center justify-center mb-8">
-                <Gauge size={24} />
+            <img
+              src="/images/discharge-tracker/current/02-home-review-queue.png"
+              alt="DC Tracker home review queue"
+              className="rounded-2xl border border-slate-800"
+            />
+            <div className="flex items-center justify-between gap-4 px-3 py-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.22em] text-slate-500">
+                  Featured Screen
+                </p>
+                <p className="mt-1 font-semibold text-slate-200">
+                  Role-aware discharge review queue
+                </p>
               </div>
-
-              <p className="uppercase tracking-[0.25em] text-slate-500 text-xs mb-4">
-                System Purpose
-              </p>
-
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                Built for operational clarity at enterprise scale.
-              </h2>
-
-              <p className="mt-5 text-slate-400 leading-relaxed">
-                The platform gives clinical, regional, executive, and
-                administrative teams a shared view of discharge activity while
-                preserving accountability through structured Dataverse records,
-                tenant-aware permissions, and audit history.
-              </p>
+              <ZoomIn className="text-slate-400 group-hover:text-white transition" size={20} />
             </div>
-
-            <div className="grid grid-cols-2 gap-4 mt-10">
-              {impact.slice(0, 2).map((item) => (
-                <div
-                  key={item.metric}
-                  className="border border-slate-800 rounded-2xl bg-slate-950/50 p-5"
-                >
-                  <p className="text-2xl md:text-3xl font-bold">
-                    {item.metric}
-                  </p>
-
-                  <p className="text-slate-500 text-sm mt-2">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.aside>
+          </motion.button>
         </div>
       </motion.section>
 
@@ -382,67 +307,70 @@ function DischargeTracker() {
         <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16">
           <div>
             <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-              Business Problem
+              Short Description
             </p>
-
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Discharge visibility was fragmented across facilities and roles.
+              Modernizing discharge review from low-code workflow to owned application platform.
             </h2>
           </div>
 
           <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
             <p className="text-slate-300 text-lg leading-relaxed">
-              Healthcare discharge workflows require coordination between
-              clinical, facility, regional, operational, and administrative
-              teams. Without a centralized platform, leaders lacked consistent
-              visibility into status, triggers, reporting, permissions, external
-              data feeds, and follow-up activity across a large multi-facility
-              environment.
+              DC Tracker gives healthcare teams a focused workspace for
+              reviewing resident discharges, documenting required clinical and
+              operational context, tracking review progression, managing
+              comments, and analyzing discharge trends over time.
             </p>
           </div>
         </div>
       </motion.section>
 
       <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8">
           <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
             <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-              Solution Overview
+              Modernization Story
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              A Dataverse-backed Power Platform application for daily
-              operations, tenant-aware access, and leadership analytics.
+              From Power Apps prototype to owned application platform.
             </h2>
 
             <p className="mt-6 text-slate-400 text-lg leading-relaxed">
-              Discharge Tracker combines a Power Apps front end, Dataverse data
-              model, SharePoint operational support layer, Power Automate
-              workflows, and administrative automation using PowerShell and
-              Microsoft Graph. The result is a practical operating system for
-              discharge management that syncs tenant users, manages permissions,
-              ingests data from other systems, and produces enterprise-ready
-              reporting.
+              The first version proved the business workflow inside Power Apps,
+              using Microsoft list-based data sources and familiar low-code
+              patterns to validate the discharge review process. As the workflow
+              matured, the limitations became clearer: SharePoint list
+              thresholds, data-model constraints, environment coupling, and the
+              difficulty of designing highly customized review, analytics, and
+              administration experiences.
+            </p>
+
+            <p className="mt-5 text-slate-400 text-lg leading-relaxed">
+              Rebuilding DC Tracker as a React, Express, and PostgreSQL
+              application preserved the operational workflow while moving the
+              system into a more flexible architecture. The converted version
+              supports richer routing, better auditability, direct database
+              ownership, custom analytics, a production-safe demo sandbox, and
+              UI patterns that are not limited by the Power Apps canvas model.
             </p>
           </div>
 
           <div className="grid gap-4">
             {[
-              "Role-aware operational views",
-              "Tenant user sync and permission management",
-              "Automated ingest from external systems",
-              "Structured discharge status tracking",
-              "Metrics and regional reporting",
-              "Audit-ready workflow history"
+              "Avoids SharePoint list threshold pressure as data grows",
+              "Reduces dependency on Dataverse-specific app patterns",
+              "Enables custom analytics with drilldown and CSV export",
+              "Supports cleaner routing, deep links, and record-level URLs",
+              "Creates a sandbox demo that is isolated from production",
+              "Gives full control over layout, validation, workflow states, and admin tools"
             ].map((item) => (
               <div
                 key={item}
                 className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-4"
               >
-                <CheckCircle2 className="text-slate-300 shrink-0" size={22} />
-                <p className="text-slate-300">
-                  {item}
-                </p>
+                <CheckCircle2 className="text-lime-300 shrink-0" size={22} />
+                <p className="text-slate-300">{item}</p>
               </div>
             ))}
           </div>
@@ -454,9 +382,8 @@ function DischargeTracker() {
           <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
             Key Features
           </p>
-
           <h2 className="text-3xl md:text-4xl font-bold">
-            Designed for clinical operations and executive oversight.
+            Built around the real review workflow.
           </h2>
         </div>
 
@@ -467,14 +394,8 @@ function DischargeTracker() {
               whileHover={{ y: -5 }}
               className="bg-slate-900 border border-slate-800 rounded-3xl p-7 hover:border-slate-600 transition"
             >
-              <div className="text-slate-300 mb-6">
-                {feature.icon}
-              </div>
-
-              <h3 className="text-xl font-semibold">
-                {feature.title}
-              </h3>
-
+              <div className="text-lime-300 mb-6">{feature.icon}</div>
+              <h3 className="text-xl font-semibold">{feature.title}</h3>
               <p className="text-slate-400 leading-relaxed mt-4">
                 {feature.description}
               </p>
@@ -486,54 +407,11 @@ function DischargeTracker() {
       <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
         <div className="mb-10">
           <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-            Technology Stack
+            Workflow Screenshots
           </p>
-
           <h2 className="text-3xl md:text-4xl font-bold">
-            Microsoft platform foundation with governed data, identity-aware
-            automation, and reporting architecture.
+            End-to-end application walkthrough.
           </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-5 gap-4">
-          {stack.map((item) => (
-            <div
-              key={item.name}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6"
-            >
-              <div className="text-slate-300 mb-5">
-                {item.icon}
-              </div>
-
-              <h3 className="font-semibold text-lg">
-                {item.name}
-              </h3>
-
-              <p className="text-slate-500 leading-relaxed mt-3 text-sm">
-                {item.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <div>
-            <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-              Screenshot Gallery
-            </p>
-
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Platform Screens
-            </h2>
-          </div>
-
-          <p className="text-slate-500 max-w-xl leading-relaxed">
-            A focused look at the operational dashboards, clinical workflows,
-            and reporting views that support discharge management across the
-            platform.
-          </p>
         </div>
 
         <div className="grid auto-rows-[280px] md:auto-rows-[320px] lg:auto-rows-[360px] md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -542,16 +420,16 @@ function DischargeTracker() {
               key={item.image}
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
+              transition={{ duration: 0.45, delay: index * 0.03 }}
               viewport={{ once: true, margin: "-80px" }}
               whileHover={{ y: -6 }}
-              className={`group relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl ${item.className}`}
+              className={`group relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl ${item.className || ""}`}
             >
               <button
                 type="button"
                 onClick={() => setSelectedImage(item)}
                 className="absolute inset-0 z-10 text-left"
-                aria-label={`View full screenshot: ${item.caption}`}
+                aria-label={`View screenshot: ${item.caption}`}
               />
 
               <div className="h-full w-full bg-slate-950 p-3 md:p-4">
@@ -562,23 +440,21 @@ function DischargeTracker() {
                 />
               </div>
 
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-5 pt-16">
-                <figcaption className="rounded-2xl border border-white/10 bg-slate-950/75 px-5 py-4 backdrop-blur">
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-5 pt-16">
+                <div className="rounded-2xl border border-white/10 bg-slate-950/75 px-5 py-4 backdrop-blur">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-sm md:text-base font-semibold text-white">
                         {item.caption}
                       </p>
-
                       <p className="text-xs text-slate-400 mt-2">
                         Click to view full image
                       </p>
                     </div>
-
                     <ZoomIn className="mt-0.5 shrink-0 text-slate-300" size={18} />
                   </div>
-                </figcaption>
-              </div>
+                </div>
+              </figcaption>
             </motion.figure>
           ))}
         </div>
@@ -587,56 +463,51 @@ function DischargeTracker() {
       <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
         <div className="mb-10">
           <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-            Operational Impact
+            Technical Stack
           </p>
-
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-4xl">
-            Improved visibility, workflow consistency, and reporting discipline.
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Full-stack implementation with identity, data, analytics, and automation.
           </h2>
-
-          <p className="text-slate-500 text-lg leading-relaxed max-w-3xl mt-5">
-            The platform creates a consistent operating model for discharge
-            management by combining workflow execution, tenant-aware access,
-            external data ingest, audit tracking, and leadership reporting in
-            one production system.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {impact.map((item, index) => (
-            <motion.article
-              key={item.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
-              viewport={{ once: true, margin: "-80px" }}
-              whileHover={{ y: -5 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-7 md:p-8 hover:border-slate-600 transition"
+          {stack.map((item) => (
+            <div
+              key={item.name}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-7"
             >
-              <div className="flex items-start justify-between gap-6">
-                <div className="h-12 w-12 rounded-2xl border border-slate-700 bg-slate-950 flex items-center justify-center text-slate-300">
-                  {item.icon}
-                </div>
+              <div className="text-lime-300 mb-5">{item.icon}</div>
+              <h3 className="font-semibold text-lg">{item.name}</h3>
+              <p className="text-slate-500 leading-relaxed mt-3 text-sm">
+                {item.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
 
-                <div className="text-right">
-                  <p className="text-2xl md:text-3xl font-bold">
-                    {item.metric}
-                  </p>
+      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
+        <div className="mb-10">
+          <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
+            Project Impact
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-4xl">
+            Better ownership, clearer workflow, and safer demos.
+          </h2>
+        </div>
 
-                  <p className="text-slate-500 text-sm mt-1">
-                    {item.label}
-                  </p>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-semibold mt-8">
-                {item.title}
-              </h3>
-
-              <p className="text-slate-400 leading-relaxed mt-4">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {impact.map((item) => (
+            <article
+              key={item.metric}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-7"
+            >
+              <p className="text-2xl font-bold">{item.metric}</p>
+              <p className="text-lime-300 text-sm mt-1">{item.label}</p>
+              <p className="text-slate-400 leading-relaxed mt-5">
                 {item.description}
               </p>
-            </motion.article>
+            </article>
           ))}
         </div>
       </motion.section>
@@ -645,7 +516,6 @@ function DischargeTracker() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
@@ -662,9 +532,8 @@ function DischargeTracker() {
             <div className="flex items-start justify-between gap-6 border-b border-slate-800 p-5 md:p-6">
               <div>
                 <p className="uppercase tracking-[0.25em] text-slate-500 text-xs mb-2">
-                  Platform Screen
+                  Workflow Screenshot
                 </p>
-
                 <h3 className="text-xl md:text-2xl font-semibold">
                   {selectedImage.caption}
                 </h3>

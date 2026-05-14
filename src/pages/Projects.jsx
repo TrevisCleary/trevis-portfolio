@@ -7,19 +7,13 @@ function Projects() {
     title: "Discharge Tracker",
     slug: "discharge-tracker",
     description:
-      "Multi-facility discharge management platform built with Power Apps, SharePoint, and automation workflows."
+      "Modern discharge review app with React, Express, PostgreSQL, Entra authentication, analytics, and a demo sandbox."
   },
   {
-    title: "M365 Provisioning Automation",
-    slug: "m365-automation",
+    title: "SNF Policy System",
+    slug: "snf-policy-system",
     description:
-      "Automated onboarding and offboarding workflows using PowerShell and Microsoft Graph."
-  },
-  {
-    title: "Infrastructure Modernization",
-    slug: "infrastructure-modernization",
-    description:
-      "Healthcare infrastructure modernization initiative focused on networking, security, and scalability."
+      "Local policy and procedure registry with AI-assisted drafting, DOCX generation, SQLite storage, and SharePoint-ready publishing."
   }
 ];
 
