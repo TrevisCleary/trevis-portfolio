@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Private portfolio source material
+portfolio-intake/power-automate/exports/*.zip
+portfolio-intake/power-automate/extracted/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import DischargeTracker from "./pages/projects/DischargeTracker";
 import SNFPolicySystem from "./pages/projects/SNFPolicySystem";
+import POCWeeklyCompliance from "./pages/projects/POCWeeklyCompliance";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/discharge-tracker" element={<DischargeTracker />} />
           <Route path="/projects/snf-policy-system" element={<SNFPolicySystem />} />
+          <Route path="/projects/poc-weekly-compliance" element={<POCWeeklyCompliance />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

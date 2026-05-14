@@ -6,7 +6,6 @@ import {
   Database,
   Download,
   ExternalLink,
-  FileSearch,
   GitBranch,
   LockKeyhole,
   MessageSquareText,

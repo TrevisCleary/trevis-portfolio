@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 
 const root = path.resolve(import.meta.dirname, '..', 'dist');
 const port = Number(process.env.PORT || 5180);
