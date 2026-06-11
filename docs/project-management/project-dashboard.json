@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "1.1",
+  "project": {
+    "id": "trevis-portfolio",
+    "name": "trevis-portfolio",
+    "path": "C:\\Development\\Projects\\trevis-portfolio",
+    "repository": {
+      "owner": "TrevisCleary",
+      "name": "trevis-portfolio",
+      "visibility": "Needs manual review",
+      "url": "https://github.com/TrevisCleary/trevis-portfolio"
+    }
+  },
+  "summary": {
+    "currentPhase": "Release Readiness",
+    "lifecycleStatus": "in-progress",
+    "governanceStatus": "pass-with-gaps",
+    "currentSprint": "Needs manual review",
+    "nextCodexAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation."
+  },
+  "counts": {
+    "epicsOpen": 0,
+    "epicsBlocked": 0,
+    "epicsReleaseReady": 0,
+    "backlogOpen": 7,
+    "backlogReady": 3,
+    "bugsOpen": 1,
+    "bugsCritical": 0,
+    "sprintCommitted": 0,
+    "sprintBlocked": 1
+  },
+  "roadmap": [
+    {
+      "id": "RM-001",
+      "title": "Maintain public portfolio SPA and case-study experience",
+      "phase": "mvp",
+      "status": "in-progress",
+      "target": "Current portfolio release",
+      "epicIds": [],
+      "dependencies": [
+        "BL-002",
+        "BL-005",
+        "BUG-001"
+      ]
+    },
+    {
+      "id": "RM-002",
+      "title": "Close public-release governance gaps before broader distribution",
+      "phase": "near-term",
+      "status": "ready",
+      "target": "Next release-readiness pass",
+      "epicIds": [],
+      "dependencies": [
+        "BUG-001",
+        "BL-001",
+        "BL-006"
+      ]
+    },
+    {
+      "id": "RM-003",
+      "title": "Establish route and asset regression confidence",
+      "phase": "near-term",
+      "status": "proposed",
+      "target": "Next QA sprint",
+      "epicIds": [],
+      "dependencies": [
+        "BL-002",
+        "BL-005"
+      ]
+    },
+    {
+      "id": "RM-004",
+      "title": "Align documentation and source structure with current app scope",
+      "phase": "near-term",
+      "status": "proposed",
+      "target": "Next maintenance pass",
+      "epicIds": [],
+      "dependencies": [
+        "BL-003",
+        "BL-004"
+      ]
+    },
+    {
+      "id": "RM-005",
+      "title": "Expand portfolio case studies through a repeatable intake-to-publication workflow",
+      "phase": "future",
+      "status": "proposed",
+      "target": "Future portfolio updates",
+      "epicIds": [],
+      "dependencies": [
+        "BL-007"
+      ]
+    }
+  ],
+  "epics": [],
+  "backlog": [
+    {
+      "id": "BL-001",
+      "epicId": "",
+      "storyId": "",
+      "type": "governance",
+      "title": "Remove, scrub, or formally govern the tracked Power Automate Desktop source export",
+      "priority": "high",
+      "status": "ready",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-002",
+      "epicId": "",
+      "storyId": "",
+      "type": "test",
+      "title": "Add route and asset smoke tests for the portfolio SPA",
+      "priority": "high",
+      "status": "proposed",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-003",
+      "epicId": "",
+      "storyId": "",
+      "type": "documentation",
+      "title": "Update README to reflect current routes, case studies, scripts, and project structure",
+      "priority": "medium",
+      "status": "ready",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-004",
+      "epicId": "",
+      "storyId": "",
+      "type": "technical-debt",
+      "title": "Reconcile unused generic ProjectDetail.jsx with the current dedicated case-study routing model",
+      "priority": "low",
+      "status": "proposed",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-005",
+      "epicId": "",
+      "storyId": "",
+      "type": "release",
+      "title": "Verify production deployment and direct SPA route refresh behavior on Vercel",
+      "priority": "medium",
+      "status": "ready",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-006",
+      "epicId": "",
+      "storyId": "",
+      "type": "governance",
+      "title": "Complete public content and media review for resume, contact, screenshots, and case-study claims",
+      "priority": "medium",
+      "status": "needs-manual-review",
+      "phase": "near-term",
+      "githubIssue": ""
+    },
+    {
+      "id": "BL-007",
+      "epicId": "",
+      "storyId": "",
+      "type": "documentation",
+      "title": "Document the repeatable intake-to-case-study promotion workflow",
+      "priority": "low",
+      "status": "proposed",
+      "phase": "future",
+      "githubIssue": ""
+    }
+  ],
+  "sprint": {
+    "id": "",
+    "name": "Needs manual review",
+    "goal": "Needs manual review. Current sprint scope could not be inferred from repository evidence.",
+    "status": "needs-manual-review",
+    "linkedEpics": [],
+    "items": []
+  },
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "epicId": "",
+      "storyId": "",
+      "title": "Tracked Power Automate Desktop source export is documented as containing sensitive credential material",
+      "severity": "high",
+      "priority": "high",
+      "status": "reported",
+      "affectedWorkflow": "Portfolio intake and release readiness",
+      "githubIssue": ""
+    }
+  ],
+  "governance": {
+    "phases": [
+      {
+        "phase": "Project Initiation",
+        "status": "complete",
+        "evidence": [
+          "docs/project-management/codex-project-management-initiation.md",
+          "docs/project-management/lifecycle-status.md"
+        ],
+        "blockingGaps": []
+      },
+      {
+        "phase": "Product Planning",
+        "status": "complete",
+        "evidence": [
+          "README.md",
+          "src/pages/Home.jsx",
+          "src/pages/Projects.jsx"
+        ],
+        "blockingGaps": []
+      },
+      {
+        "phase": "Project Scoping",
+        "status": "complete",
+        "evidence": [
+          "src/App.jsx",
+          "vercel.json"
+        ],
+        "blockingGaps": []
+      },
+      {
+        "phase": "Technical Design",
+        "status": "complete",
+        "evidence": [
+          "package.json",
+          "vite.config.js",
+          "vercel.json"
+        ],
+        "blockingGaps": [
+          "No automated behavior test architecture yet."
+        ]
+      },
+      {
+        "phase": "Feature Delivery",
+        "status": "in-progress",
+        "evidence": [
+          "src/pages/projects/DischargeTracker.jsx",
+          "src/pages/projects/SNFPolicySystem.jsx",
+          "src/pages/projects/POCWeeklyCompliance.jsx"
+        ],
+        "blockingGaps": [
+          "Release-blocking intake/security bug remains open."
+        ]
+      },
+      {
+        "phase": "QA",
+        "status": "in-progress",
+        "evidence": [
+          "npm.cmd run lint",
+          "npm.cmd run build",
+          "npm.cmd test --if-present"
+        ],
+        "blockingGaps": [
+          "No automated route, image, modal, responsive, or deployment smoke tests."
+        ]
+      },
+      {
+        "phase": "Release Readiness",
+        "status": "in-progress",
+        "evidence": [
+          "vercel.json",
+          "npm.cmd run build"
+        ],
+        "blockingGaps": [
+          "BUG-001",
+          "Production deployment not verified in this workflow.",
+          "Owner content/media review needed."
+        ]
+      }
+    ],
+    "security": "blocked",
+    "data": "pass-with-gaps",
+    "testing": "pass-with-gaps",
+    "release": "blocked"
+  },
+  "codexActivity": [
+    {
+      "id": "CX-2026-06-11-002",
+      "timestamp": "2026-06-11T18:35:00-04:00",
+      "workflow": "Feature Implementation",
+      "summary": "Added a RidgePath Forge action for every project to create or update draft project and blog entries in trevis-portfolio.",
+      "epicIds": [],
+      "filesChanged": [
+        "C:\\Development\\Shared\\local-project-launcher\\server\\index.js",
+        "C:\\Development\\Shared\\local-project-launcher\\src\\main.jsx",
+        "C:\\Development\\Shared\\local-project-launcher\\src\\styles.css",
+        "src/data/featuredProjects.js",
+        "src/data/projectIdeas.json",
+        "src/data/blogPosts.json",
+        "src/pages/Projects.jsx",
+        "src/pages/ProjectIdeaDetail.jsx",
+        "src/pages/Blog.jsx",
+        "src/pages/BlogPost.jsx",
+        "src/App.jsx",
+        "src/components/Navbar.jsx"
+      ],
+      "validation": "Portfolio and launcher builds passed; Forge API upsert returned success; browser verified imported project and blog draft pages.",
+      "nextAction": "Review generated draft copy, scrub sensitive content before publishing, and use the launcher button on additional projects as needed."
+    },
+    {
+      "id": "CX-2026-06-11-001",
+      "timestamp": "2026-06-11T18:00:00-04:00",
+      "workflow": "Project Management Initialization",
+      "summary": "RidgePath Forge starter package was populated from repository evidence using the Operations Library project-management contract.",
+      "epicIds": [],
+      "filesChanged": [
+        "docs/project-management/roadmap.md",
+        "docs/project-management/backlog.md",
+        "docs/project-management/sprint-current.md",
+        "docs/project-management/bugs.md",
+        "docs/project-management/lifecycle-status.md",
+        "docs/project-management/codex-activity.md",
+        "docs/project-management/project-dashboard.json"
+      ],
+      "validation": "npm.cmd run lint passed; npm.cmd run build passed; npm.cmd test --if-present found no configured test script; project-dashboard.json parsed as schema 1.1; RidgePath Forge API/UI loaded the refreshed dashboard without manual restart.",
+      "nextAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation."
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-06-11T18:40:00-04:00",
+    "generatedBy": "Codex using Codex Operations Library",
+    "sourceFiles": [
+      "docs/project-management/roadmap.md",
+      "docs/project-management/backlog.md",
+      "docs/project-management/sprint-current.md",
+      "docs/project-management/bugs.md",
+      "docs/project-management/codex-activity.md",
+      "docs/project-management/lifecycle-status.md"
+    ]
+  }
+}

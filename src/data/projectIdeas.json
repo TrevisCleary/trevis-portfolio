@@ -1,0 +1,38 @@
+[
+  {
+    "id": "idea-trevis-portfolio",
+    "sourceProjectId": "trevis-portfolio",
+    "slug": "trevis-portfolio",
+    "title": "Trevis Portfolio",
+    "summary": "Trevis Cleary Portfolio",
+    "description": "Trevis Cleary Portfolio",
+    "image": "",
+    "publish": false,
+    "reviewStatus": "Needs manual review",
+    "importedAt": "2026-06-11T22:29:19.591Z",
+    "updatedAt": "2026-06-11T22:32:21.712Z",
+    "audience": "personal",
+    "framework": "Vite",
+    "owner": "TrevisCleary",
+    "repositoryUrl": "https://github.com/TrevisCleary/trevis-portfolio.git",
+    "liveUrl": "",
+    "localPath": "C:\\Development\\Projects\\trevis-portfolio",
+    "lifecyclePhase": "Release Readiness",
+    "nextAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation.",
+    "portfolioAngle": "Trevis Portfolio may become a portfolio case study after public-safe outcomes, screenshots, architecture notes, and implementation details are reviewed.",
+    "tags": [
+      "Vite",
+      "personal",
+      "TrevisCleary",
+      "Release Readiness"
+    ],
+    "blogSlug": "trevis-portfolio-project-notes",
+    "publicationChecklist": [
+      "Confirm this project can be discussed publicly.",
+      "Scrub internal names, customer data, credentials, hostnames, tenant identifiers, and private URLs.",
+      "Add public-safe screenshots or diagrams.",
+      "Summarize the business problem, technical approach, and measurable outcome.",
+      "Set publish to true only after review."
+    ]
+  }
+]

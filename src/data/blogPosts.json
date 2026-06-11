@@ -1,0 +1,35 @@
+[
+  {
+    "id": "blog-trevis-portfolio",
+    "sourceProjectId": "trevis-portfolio",
+    "slug": "trevis-portfolio-project-notes",
+    "projectSlug": "trevis-portfolio",
+    "title": "Project Notes: Trevis Portfolio",
+    "excerpt": "A draft writeup about Trevis Portfolio, imported from RidgePath Forge for review and expansion.",
+    "date": "2026-06-11",
+    "publish": false,
+    "reviewStatus": "Needs manual review",
+    "importedAt": "2026-06-11T22:29:19.591Z",
+    "updatedAt": "2026-06-11T22:32:21.712Z",
+    "tags": [
+      "Vite",
+      "personal",
+      "TrevisCleary",
+      "Release Readiness"
+    ],
+    "sections": [
+      {
+        "heading": "What this project is about",
+        "body": "Trevis Cleary Portfolio"
+      },
+      {
+        "heading": "Current state",
+        "body": "RidgePath Forge lists this project as stopped with Vite. Project-management phase: Release Readiness. Open backlog: 7. Open bugs: 1."
+      },
+      {
+        "heading": "What to write next",
+        "body": "Next action from project management: Remediate BUG-001, then run Release Readiness with live Vercel validation. Before publishing, convert this draft into a public-safe story with problem context, design choices, implementation tradeoffs, screenshots, and validation evidence."
+      }
+    ]
+  }
+]

@@ -5,9 +5,12 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import ProjectIdeaDetail from "./pages/ProjectIdeaDetail";
 import DischargeTracker from "./pages/projects/DischargeTracker";
 import SNFPolicySystem from "./pages/projects/SNFPolicySystem";
 import POCWeeklyCompliance from "./pages/projects/POCWeeklyCompliance";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
@@ -21,9 +24,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/ideas/:slug" element={<ProjectIdeaDetail />} />
           <Route path="/projects/discharge-tracker" element={<DischargeTracker />} />
           <Route path="/projects/snf-policy-system" element={<SNFPolicySystem />} />
           <Route path="/projects/poc-weekly-compliance" element={<POCWeeklyCompliance />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
