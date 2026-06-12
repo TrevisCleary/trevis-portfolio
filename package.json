@@ -5,8 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host localhost --port 3206",
+    "content": "node scripts/content-server.js",
+    "dev:content": "node scripts/start-content-workspace.js",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "npm run build && node scripts/smoke-test.js",
+    "test:smoke": "node scripts/smoke-test.js",
     "preview": "vite preview --host localhost --port 3206"
   },
   "dependencies": {

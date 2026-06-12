@@ -4,9 +4,7 @@
 
 `exports/ExportPOCWeeklyCompliance_20260514180109.zip`
 
-Desktop flow source:
-
-`exports/ExportPOCWeeklyCompliance_PAD.txt`
+Desktop flow source: raw PAD source is intentionally excluded from Git. Keep any local copy under `exports/` only for private analysis, and do not publish it directly.
 
 ## Initial Read
 

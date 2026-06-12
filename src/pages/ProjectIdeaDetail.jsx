@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import LocalPublishButton from "../components/LocalPublishButton";
 import projectIdeas from "../data/projectIdeas.json";
 
 function visibleIdeas() {
@@ -29,6 +30,8 @@ function ProjectIdeaDetail() {
 
   const tags = Array.isArray(idea.tags) ? idea.tags : [];
   const acceptance = Array.isArray(idea.publicationChecklist) ? idea.publicationChecklist : [];
+  const screenshots = Array.isArray(idea.screenshots) ? idea.screenshots : [];
+  const aiReviewNotes = Array.isArray(idea.aiReviewNotes) ? idea.aiReviewNotes : [];
 
   return (
     <main className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-24">
@@ -79,6 +82,67 @@ function ProjectIdeaDetail() {
           </section>
 
           <section className="mt-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+              <div>
+                <h2 className="text-3xl font-bold">AI Draft Review</h2>
+                <p className="mt-3 text-slate-500">
+                  {idea.aiMessage || "No AI generation has been run for this draft."}
+                </p>
+              </div>
+              <span className="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300">
+                {idea.aiStatus || "not generated"}
+              </span>
+            </div>
+            {aiReviewNotes.length ? (
+              <div className="grid gap-4">
+                {aiReviewNotes.map((note) => (
+                  <div key={note} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-300">
+                    {note}
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </section>
+
+          <section className="mt-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+              <div>
+                <h2 className="text-3xl font-bold">Screenshot Review</h2>
+                <p className="mt-3 text-slate-500">
+                  {idea.screenshotNotes || "Start the source project locally and run Add to Portfolio to capture screenshots."}
+                </p>
+              </div>
+              <span className="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300">
+                {idea.screenshotStatus || "Needs review"}
+              </span>
+            </div>
+
+            {screenshots.length ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {screenshots.map((screenshot) => (
+                  <figure key={screenshot.image} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
+                    <div className="aspect-video bg-slate-950 p-3">
+                      <img
+                        src={screenshot.image}
+                        alt={`${screenshot.title} screenshot`}
+                        className="h-full w-full rounded-xl object-contain"
+                      />
+                    </div>
+                    <figcaption className="p-5">
+                      <h3 className="font-semibold text-slate-100">{screenshot.title}</h3>
+                      <p className="mt-2 break-all text-sm text-slate-500">{screenshot.url}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-400">
+                No screenshots captured yet.
+              </div>
+            )}
+          </section>
+
+          <section className="mt-16">
             <h2 className="text-3xl font-bold mb-6">Publication Checklist</h2>
             <div className="grid gap-4">
               {acceptance.length ? acceptance.map((item) => (
@@ -112,6 +176,12 @@ function ProjectIdeaDetail() {
               </div>
             </dl>
           </div>
+
+          <LocalPublishButton
+            kind="project"
+            id={idea.sourceProjectId || idea.slug}
+            published={idea.publish}
+          />
 
           {tags.length ? (
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">

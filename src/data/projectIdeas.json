@@ -4,13 +4,13 @@
     "sourceProjectId": "trevis-portfolio",
     "slug": "trevis-portfolio",
     "title": "Trevis Portfolio",
-    "summary": "Trevis Cleary Portfolio",
-    "description": "Trevis Cleary Portfolio",
-    "image": "",
+    "summary": "A personal portfolio site built with Vite to present professional background, project work, and case-study content in a reviewable single-page application experience.",
+    "description": "Trevis Portfolio is an in-progress personal portfolio application owned by TrevisCleary and built on Vite. The project is currently in Release Readiness with local screenshots captured for the Home, About, and Projects routes. Current readiness work focuses on governance, route and asset validation, documentation updates, and production deployment verification before any public release.",
+    "image": "/portfolio-drafts/trevis-portfolio/01-home.png",
     "publish": false,
     "reviewStatus": "Needs manual review",
     "importedAt": "2026-06-11T22:29:19.591Z",
-    "updatedAt": "2026-06-11T22:32:21.712Z",
+    "updatedAt": "2026-06-12T02:39:33.540Z",
     "audience": "personal",
     "framework": "Vite",
     "owner": "TrevisCleary",
@@ -19,12 +19,17 @@
     "localPath": "C:\\Development\\Projects\\trevis-portfolio",
     "lifecyclePhase": "Release Readiness",
     "nextAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation.",
-    "portfolioAngle": "Trevis Portfolio may become a portfolio case study after public-safe outcomes, screenshots, architecture notes, and implementation details are reviewed.",
+    "portfolioAngle": "Position this as a release-readiness and governance-focused portfolio build: a personal site designed not only to showcase work, but also to apply structured backlog management, content review, documentation hygiene, and deployment validation before publication.",
     "tags": [
       "Vite",
       "personal",
       "TrevisCleary",
-      "Release Readiness"
+      "Release Readiness",
+      "Portfolio",
+      "Single Page Application",
+      "Governance",
+      "Documentation",
+      "Frontend"
     ],
     "blogSlug": "trevis-portfolio-project-notes",
     "publicationChecklist": [
@@ -33,6 +38,51 @@
       "Add public-safe screenshots or diagrams.",
       "Summarize the business problem, technical approach, and measurable outcome.",
       "Set publish to true only after review."
-    ]
+    ],
+    "screenshots": [
+      {
+        "title": "Home",
+        "url": "http://localhost:3206",
+        "image": "/portfolio-drafts/trevis-portfolio/01-home.png",
+        "capturedAt": "2026-06-12T00:44:41.100Z",
+        "publishReady": false
+      },
+      {
+        "title": "Home",
+        "url": "http://localhost:3206/",
+        "image": "/portfolio-drafts/trevis-portfolio/02-home.png",
+        "capturedAt": "2026-06-12T00:44:42.572Z",
+        "publishReady": false
+      },
+      {
+        "title": "About",
+        "url": "http://localhost:3206/about",
+        "image": "/portfolio-drafts/trevis-portfolio/03-about.png",
+        "capturedAt": "2026-06-12T00:44:43.981Z",
+        "publishReady": false
+      },
+      {
+        "title": "Projects",
+        "url": "http://localhost:3206/projects",
+        "image": "/portfolio-drafts/trevis-portfolio/04-projects.png",
+        "capturedAt": "2026-06-12T00:44:45.306Z",
+        "publishReady": false
+      }
+    ],
+    "screenshotStatus": "captured",
+    "screenshotNotes": "Screenshots captured from the running local app. Review before publishing.",
+    "seoTitle": "Trevis Portfolio Release Readiness Draft",
+    "seoDescription": "Draft portfolio and blog copy for a Vite-based personal portfolio project currently in release readiness, with governance, testing, documentation, and deployment validation tasks in progress.",
+    "aiStatus": "generated",
+    "aiModel": "gpt-5.5",
+    "aiGeneratedAt": "2026-06-12T00:44:57.087Z",
+    "aiReviewNotes": [
+      "Do not publish until BUG-001 is remediated and verified.",
+      "Screenshots were captured locally and require review before publication.",
+      "Public content and media review is still needed for resume, contact details, screenshots, and case-study claims.",
+      "Production deployment and direct SPA route refresh behavior on Vercel still need validation.",
+      "README updates are pending for routes, case studies, scripts, and project structure."
+    ],
+    "aiMessage": "OpenAI generated draft project and blog copy."
   }
 ]

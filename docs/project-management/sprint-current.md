@@ -31,7 +31,8 @@ Needs manual review. Current sprint scope could not be inferred from repository 
 
 ## Blockers
 
-- `BUG-001` blocks release readiness until sensitive tracked intake source material is remediated or accepted by the owner.
+- `BUG-001` remains in validation until the current export deletion is committed and owner action is recorded for credential rotation/invalidity plus any repository history rewrite decision.
+- Vercel Deployment Protection blocks unauthenticated public access to the current production deployment.
 - Sprint commitment is blocked pending owner review.
 
 ## Closure Summary

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import LocalPublishButton from "../components/LocalPublishButton";
 import blogPosts from "../data/blogPosts.json";
 
 function visiblePosts() {
@@ -33,29 +34,36 @@ function Blog() {
 
       <div className="mt-14 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
         {posts.length ? posts.map((post) => (
-          <Link
+          <article
             key={post.slug}
-            to={`/blog/${post.slug}`}
             className="group rounded-2xl border border-slate-800 bg-slate-900/70 p-7 hover:border-slate-600 hover:-translate-y-1 transition duration-300"
           >
-            <div className="flex flex-wrap items-center gap-2 mb-5">
-              {!post.publish ? (
-                <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
-                  Draft
-                </span>
-              ) : null}
-              <span className="text-sm text-slate-500">{post.date || "Needs review"}</span>
-            </div>
-            <h2 className="text-2xl font-semibold leading-snug group-hover:text-white">
-              {post.title}
-            </h2>
-            <p className="mt-4 text-slate-400 leading-relaxed">
-              {post.excerpt}
-            </p>
-            <span className="inline-flex mt-8 text-sm font-semibold text-slate-200">
-              Read draft
-            </span>
-          </Link>
+            <Link to={`/blog/${post.slug}`} className="block">
+              <div className="flex flex-wrap items-center gap-2 mb-5">
+                {!post.publish ? (
+                  <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
+                    Draft
+                  </span>
+                ) : null}
+                <span className="text-sm text-slate-500">{post.date || "Needs review"}</span>
+              </div>
+              <h2 className="text-2xl font-semibold leading-snug group-hover:text-white">
+                {post.title}
+              </h2>
+              <p className="mt-4 text-slate-400 leading-relaxed">
+                {post.excerpt}
+              </p>
+              <span className="inline-flex mt-8 text-sm font-semibold text-slate-200">
+                Read draft
+              </span>
+            </Link>
+            <LocalPublishButton
+              kind="blog"
+              id={post.sourceProjectId || post.projectSlug || post.slug}
+              published={post.publish}
+              className="mt-6"
+            />
+          </article>
         )) : (
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-8 text-slate-400">
             No blog posts are published yet. Imported drafts appear here during local development.

@@ -14,15 +14,15 @@ Last Updated: `2026-06-11`
 
 | ID | Title | Status | Target | Dependencies | Source |
 | --- | --- | --- | --- | --- | --- |
-| RM-002 | Close public-release governance gaps before broader distribution | ready | Next release-readiness pass | BUG-001, BL-001, BL-006 | `portfolio-intake/power-automate/README.md`; `portfolio-intake/power-automate/notes/poc-weekly-compliance.md`; tracked `portfolio-intake/power-automate/exports/ExportPOCWeeklyCompliance_PAD.txt` |
-| RM-003 | Establish route and asset regression confidence | proposed | Next QA sprint | BL-002, BL-005 | `package.json`; `src/App.jsx`; `public/images/`; validation run `npm.cmd run lint`; validation run `npm.cmd run build`; `npm.cmd test --if-present` found no configured test script |
-| RM-004 | Align documentation and source structure with current app scope | proposed | Next maintenance pass | BL-003, BL-004 | `README.md`; `src/App.jsx`; `src/pages/ProjectDetail.jsx`; `src/pages/Projects.jsx` |
+| RM-002 | Close public-release governance gaps before broader distribution | in-validation | Next release-readiness pass | BUG-001, BL-001, BL-006 | `portfolio-intake/power-automate/README.md`; `.gitignore`; deleted raw PAD export pending commit; owner content/security review remains |
+| RM-003 | Establish route and asset regression confidence | in-progress | Next QA sprint | BL-002, BL-005 | `package.json`; `scripts/smoke-test.js`; `src/App.jsx`; `public/images/`; `npm.cmd test`; protected Vercel route checks |
+| RM-004 | Align documentation and source structure with current app scope | done | Next maintenance pass | BL-003, BL-004 | `README.md`; `src/App.jsx`; removed unused `src/pages/ProjectDetail.jsx`; `src/pages/Projects.jsx` |
 
 ## Future Phase
 
 | ID | Title | Status | Target | Dependencies | Source |
 | --- | --- | --- | --- | --- | --- |
-| RM-005 | Expand portfolio case studies through a repeatable intake-to-publication workflow | proposed | Future portfolio updates | BL-007 | `portfolio-intake/power-automate/README.md`; `portfolio-intake/power-automate/notes/poc-weekly-compliance.md`; existing case-study page pattern under `src/pages/projects/` |
+| RM-005 | Expand portfolio case studies through a repeatable intake-to-publication workflow | in-progress | Future portfolio updates | BL-007 | `docs/project-management/intake-to-case-study-workflow.md`; `portfolio-intake/power-automate/README.md`; existing case-study page pattern under `src/pages/projects/` |
 
 ## Deferred Opportunities
 
@@ -31,6 +31,6 @@ Last Updated: `2026-06-11`
 
 ## Risks
 
-- `BUG-001` is release-blocking until the tracked Power Automate Desktop source export is removed, scrubbed, or otherwise governed.
-- Release readiness is not complete until the live Vercel deployment is verified after these project-management updates.
-- Automated behavior coverage is missing; lint and build passing do not prove route-level behavior, modal behavior, asset availability, or responsive rendering.
+- `BUG-001` remains in validation until the current deletion is committed and owner credential/history decisions are recorded.
+- Release readiness is not public-complete while Vercel Deployment Protection blocks unauthenticated access.
+- Browser-level visual coverage remains manual; smoke tests now cover route fallback and representative asset availability.

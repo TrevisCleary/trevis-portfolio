@@ -13,8 +13,12 @@ dist-ssr
 *.local
 
 # Private portfolio source material
+openai-secret.txt
+portfolio-intake/power-automate/exports/*
+!portfolio-intake/power-automate/exports/.gitkeep
 portfolio-intake/power-automate/exports/*.zip
 portfolio-intake/power-automate/extracted/
+public/portfolio-drafts/
 
 # Editor directories and files
 .vscode/*
@@ -26,3 +30,4 @@ portfolio-intake/power-automate/extracted/
 *.njsproj
 *.sln
 *.sw?
+.vercel

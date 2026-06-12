@@ -4,32 +4,62 @@
     "sourceProjectId": "trevis-portfolio",
     "slug": "trevis-portfolio-project-notes",
     "projectSlug": "trevis-portfolio",
-    "title": "Project Notes: Trevis Portfolio",
-    "excerpt": "A draft writeup about Trevis Portfolio, imported from RidgePath Forge for review and expansion.",
-    "date": "2026-06-11",
+    "title": "Preparing a Personal Portfolio for Release Readiness",
+    "excerpt": "A draft look at the release-readiness process behind a Vite-based personal portfolio, including route review, documentation updates, governance checks, and deployment validation before public launch.",
+    "date": "2026-06-12",
     "publish": false,
     "reviewStatus": "Needs manual review",
     "importedAt": "2026-06-11T22:29:19.591Z",
-    "updatedAt": "2026-06-11T22:32:21.712Z",
+    "updatedAt": "2026-06-12T02:39:33.542Z",
     "tags": [
       "Vite",
       "personal",
       "TrevisCleary",
-      "Release Readiness"
+      "Release Readiness",
+      "Portfolio",
+      "Single Page Application",
+      "Governance",
+      "Documentation",
+      "Frontend"
     ],
     "sections": [
       {
-        "heading": "What this project is about",
-        "body": "Trevis Cleary Portfolio"
+        "heading": "Project Overview",
+        "body": "Trevis Portfolio is a personal portfolio application built with Vite. The site is intended to present professional background and project content through routes such as Home, About, and Projects. At this stage, the project remains in progress and should be treated as a release candidate rather than a published portfolio."
       },
       {
-        "heading": "Current state",
-        "body": "RidgePath Forge lists this project as stopped with Vite. Project-management phase: Release Readiness. Open backlog: 7. Open bugs: 1."
+        "heading": "Release Readiness Focus",
+        "body": "The current project phase is Release Readiness, with governance marked as pass-with-gaps. That status is useful: it shows that the application is moving toward launch while still identifying specific items that need remediation or manual review. The next planned action is to remediate BUG-001 and then run Release Readiness with live Vercel validation."
       },
       {
-        "heading": "What to write next",
-        "body": "Next action from project management: Remediate BUG-001, then run Release Readiness with live Vercel validation. Before publishing, convert this draft into a public-safe story with problem context, design choices, implementation tradeoffs, screenshots, and validation evidence."
+        "heading": "Screenshots captured for review",
+        "body": "RidgePath Forge captured 4 local screenshot drafts for portfolio review. These images remain draft assets until reviewed and promoted into public project media."
+      },
+      {
+        "heading": "Governance and Content Review",
+        "body": "The most important open issue is BUG-001, which reports that a tracked Power Automate Desktop source export is documented as containing sensitive credential material. Before any public launch, this item should be remediated and verified. Additional governance work includes removing, scrubbing, or formally governing the tracked export and completing a public content and media review for resume, contact information, screenshots, and case-study claims."
+      },
+      {
+        "heading": "Testing and Deployment Validation",
+        "body": "The backlog includes adding route and asset smoke tests for the portfolio SPA and verifying production deployment behavior, including direct route refresh behavior on Vercel. Local screenshots have already been captured for the Home, About, and Projects routes, but those screenshots should be reviewed before publishing."
+      },
+      {
+        "heading": "Documentation Improvements",
+        "body": "Documentation remains part of the release plan. The README needs updates to reflect the current routes, case studies, scripts, and project structure. A future documentation task also proposes capturing the repeatable intake-to-case-study promotion workflow, which would help make future portfolio updates more consistent and reviewable."
       }
-    ]
+    ],
+    "seoTitle": "Trevis Portfolio Release Readiness Draft",
+    "seoDescription": "Draft portfolio and blog copy for a Vite-based personal portfolio project currently in release readiness, with governance, testing, documentation, and deployment validation tasks in progress.",
+    "aiStatus": "generated",
+    "aiModel": "gpt-5.5",
+    "aiGeneratedAt": "2026-06-12T00:44:57.087Z",
+    "aiReviewNotes": [
+      "Do not publish until BUG-001 is remediated and verified.",
+      "Screenshots were captured locally and require review before publication.",
+      "Public content and media review is still needed for resume, contact details, screenshots, and case-study claims.",
+      "Production deployment and direct SPA route refresh behavior on Vercel still need validation.",
+      "README updates are pending for routes, case studies, scripts, and project structure."
+    ],
+    "aiMessage": "OpenAI generated draft project and blog copy."
   }
 ]

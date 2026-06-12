@@ -22,12 +22,29 @@ const contentTypes = {
 const server = http.createServer((request, response) => {
   const urlPath = decodeURIComponent(new URL(request.url || '/', `http://localhost:${port}`).pathname);
   const requestedPath = path.normalize(path.join(root, urlPath));
-  const safePath = requestedPath.startsWith(root) ? requestedPath : root;
-  const filePath = existsSync(safePath) && statSync(safePath).isFile()
-    ? safePath
-    : path.join(root, 'index.html');
-  const extension = path.extname(filePath).toLowerCase();
-  response.writeHead(200, { 'Content-Type': contentTypes[extension] || 'application/octet-stream' });
+  const relativePath = path.relative(root, requestedPath);
+  const extension = path.extname(urlPath).toLowerCase();
+
+  if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+    response.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    response.end('Forbidden');
+    return;
+  }
+
+  const filePath = existsSync(requestedPath) && statSync(requestedPath).isFile()
+    ? requestedPath
+    : extension
+      ? null
+      : path.join(root, 'index.html');
+
+  if (!filePath || !existsSync(filePath)) {
+    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    response.end('Not found');
+    return;
+  }
+
+  const fileExtension = path.extname(filePath).toLowerCase();
+  response.writeHead(200, { 'Content-Type': contentTypes[fileExtension] || 'application/octet-stream' });
   createReadStream(filePath).pipe(response);
 });
 

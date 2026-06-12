@@ -16,15 +16,15 @@
     "lifecycleStatus": "in-progress",
     "governanceStatus": "pass-with-gaps",
     "currentSprint": "Needs manual review",
-    "nextCodexAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation."
+    "nextCodexAction": "Commit the current remediation set, resolve owner-only security/content review items, and disable or intentionally bypass Vercel Deployment Protection before public launch validation."
   },
   "counts": {
     "epicsOpen": 0,
     "epicsBlocked": 0,
     "epicsReleaseReady": 0,
-    "backlogOpen": 7,
-    "backlogReady": 3,
-    "bugsOpen": 1,
+    "backlogOpen": 3,
+    "backlogReady": 0,
+    "bugsOpen": 0,
     "bugsCritical": 0,
     "sprintCommitted": 0,
     "sprintBlocked": 1
@@ -47,7 +47,7 @@
       "id": "RM-002",
       "title": "Close public-release governance gaps before broader distribution",
       "phase": "near-term",
-      "status": "ready",
+      "status": "in-validation",
       "target": "Next release-readiness pass",
       "epicIds": [],
       "dependencies": [
@@ -60,7 +60,7 @@
       "id": "RM-003",
       "title": "Establish route and asset regression confidence",
       "phase": "near-term",
-      "status": "proposed",
+      "status": "in-progress",
       "target": "Next QA sprint",
       "epicIds": [],
       "dependencies": [
@@ -72,7 +72,7 @@
       "id": "RM-004",
       "title": "Align documentation and source structure with current app scope",
       "phase": "near-term",
-      "status": "proposed",
+      "status": "done",
       "target": "Next maintenance pass",
       "epicIds": [],
       "dependencies": [
@@ -84,7 +84,7 @@
       "id": "RM-005",
       "title": "Expand portfolio case studies through a repeatable intake-to-publication workflow",
       "phase": "future",
-      "status": "proposed",
+      "status": "in-progress",
       "target": "Future portfolio updates",
       "epicIds": [],
       "dependencies": [
@@ -101,7 +101,7 @@
       "type": "governance",
       "title": "Remove, scrub, or formally govern the tracked Power Automate Desktop source export",
       "priority": "high",
-      "status": "ready",
+      "status": "in-validation",
       "phase": "near-term",
       "githubIssue": ""
     },
@@ -112,7 +112,7 @@
       "type": "test",
       "title": "Add route and asset smoke tests for the portfolio SPA",
       "priority": "high",
-      "status": "proposed",
+      "status": "done",
       "phase": "near-term",
       "githubIssue": ""
     },
@@ -123,7 +123,7 @@
       "type": "documentation",
       "title": "Update README to reflect current routes, case studies, scripts, and project structure",
       "priority": "medium",
-      "status": "ready",
+      "status": "done",
       "phase": "near-term",
       "githubIssue": ""
     },
@@ -134,7 +134,7 @@
       "type": "technical-debt",
       "title": "Reconcile unused generic ProjectDetail.jsx with the current dedicated case-study routing model",
       "priority": "low",
-      "status": "proposed",
+      "status": "done",
       "phase": "near-term",
       "githubIssue": ""
     },
@@ -145,7 +145,7 @@
       "type": "release",
       "title": "Verify production deployment and direct SPA route refresh behavior on Vercel",
       "priority": "medium",
-      "status": "ready",
+      "status": "in-validation",
       "phase": "near-term",
       "githubIssue": ""
     },
@@ -167,7 +167,7 @@
       "type": "documentation",
       "title": "Document the repeatable intake-to-case-study promotion workflow",
       "priority": "low",
-      "status": "proposed",
+      "status": "done",
       "phase": "future",
       "githubIssue": ""
     }
@@ -188,7 +188,7 @@
       "title": "Tracked Power Automate Desktop source export is documented as containing sensitive credential material",
       "severity": "high",
       "priority": "high",
-      "status": "reported",
+      "status": "in-validation",
       "affectedWorkflow": "Portfolio intake and release readiness",
       "githubIssue": ""
     }
@@ -229,11 +229,10 @@
         "evidence": [
           "package.json",
           "vite.config.js",
-          "vercel.json"
+          "vercel.json",
+          "scripts/smoke-test.js"
         ],
-        "blockingGaps": [
-          "No automated behavior test architecture yet."
-        ]
+        "blockingGaps": []
       },
       {
         "phase": "Feature Delivery",
@@ -241,10 +240,11 @@
         "evidence": [
           "src/pages/projects/DischargeTracker.jsx",
           "src/pages/projects/SNFPolicySystem.jsx",
-          "src/pages/projects/POCWeeklyCompliance.jsx"
+          "src/pages/projects/POCWeeklyCompliance.jsx",
+          "docs/project-management/intake-to-case-study-workflow.md"
         ],
         "blockingGaps": [
-          "Release-blocking intake/security bug remains open."
+          "Owner review is still needed before public release expansion."
         ]
       },
       {
@@ -252,11 +252,11 @@
         "status": "in-progress",
         "evidence": [
           "npm.cmd run lint",
-          "npm.cmd run build",
-          "npm.cmd test --if-present"
+          "npm.cmd test",
+          "scripts/smoke-test.js"
         ],
         "blockingGaps": [
-          "No automated route, image, modal, responsive, or deployment smoke tests."
+          "Browser-level visual/regression coverage is still manual."
         ]
       },
       {
@@ -264,21 +264,108 @@
         "status": "in-progress",
         "evidence": [
           "vercel.json",
-          "npm.cmd run build"
+          "npm.cmd test",
+          "authenticated vercel curl route and asset checks"
         ],
         "blockingGaps": [
-          "BUG-001",
-          "Production deployment not verified in this workflow.",
+          "BUG-001 remains in validation.",
+          "Vercel Deployment Protection blocks unauthenticated public access.",
           "Owner content/media review needed."
         ]
       }
     ],
-    "security": "blocked",
+    "security": "in-validation",
     "data": "pass-with-gaps",
     "testing": "pass-with-gaps",
-    "release": "blocked"
+    "release": "in-validation"
   },
   "codexActivity": [
+    {
+      "id": "CX-2026-06-11-006",
+      "timestamp": "2026-06-11T22:50:00-04:00",
+      "workflow": "Backlog Execution / Release Readiness",
+      "summary": "Worked through actionable backlog items: removed the raw tracked PAD export from the current change set, ignored future raw exports, added route/asset smoke tests, removed unused generic project-detail code, refreshed README, documented the intake-to-case-study workflow, and validated the protected Vercel deployment.",
+      "epicIds": [],
+      "filesChanged": [
+        ".gitignore",
+        "README.md",
+        "package.json",
+        "scripts/smoke-test.js",
+        "scripts/serve-dist.js",
+        "src/pages/ProjectDetail.jsx",
+        "portfolio-intake/power-automate/exports/ExportPOCWeeklyCompliance_PAD.txt",
+        "portfolio-intake/power-automate/notes/poc-weekly-compliance.md",
+        "docs/project-management/intake-to-case-study-workflow.md",
+        "docs/project-management/backlog.md",
+        "docs/project-management/bugs.md",
+        "docs/project-management/lifecycle-status.md",
+        "docs/project-management/roadmap.md",
+        "docs/project-management/sprint-current.md",
+        "docs/project-management/codex-activity.md",
+        "docs/project-management/project-dashboard.json"
+      ],
+      "validation": "node --check scripts/smoke-test.js passed; node --check scripts/serve-dist.js passed; npm.cmd run lint passed; npm.cmd test passed and verified 9 SPA routes plus 6 assets; authenticated vercel curl returned HTTP 200 for required direct SPA routes and representative assets; unauthenticated public requests are blocked by Vercel Deployment Protection.",
+      "nextAction": "Commit this remediation set; owner should rotate or confirm invalid any previously exposed credential material, decide whether git history rewrite/force-push is required, complete public content/media review, and disable or intentionally bypass Vercel Deployment Protection before public launch."
+    },
+    {
+      "id": "CX-2026-06-11-005",
+      "timestamp": "2026-06-11T22:40:00-04:00",
+      "workflow": "Feature Enhancement",
+      "summary": "Added local-only publish controls for generated portfolio project ideas and blog posts.",
+      "epicIds": [],
+      "filesChanged": [
+        "package.json",
+        "eslint.config.js",
+        "scripts/content-server.js",
+        "scripts/start-content-workspace.js",
+        "src/components/LocalPublishButton.jsx",
+        "src/pages/Projects.jsx",
+        "src/pages/Blog.jsx",
+        "src/pages/ProjectIdeaDetail.jsx",
+        "src/pages/BlogPost.jsx",
+        "src/data/projectIdeas.json",
+        "src/data/blogPosts.json"
+      ],
+      "validation": "Node syntax checks, lint, and build passed; content API health and publish/unpublish round trip passed; browser verified local publish buttons on /projects and /blog.",
+      "nextAction": "Start npm.cmd run dev:content, review draft content, click Publish Draft after manual approval, then commit and push the JSON changes."
+    },
+    {
+      "id": "CX-2026-06-11-004",
+      "timestamp": "2026-06-11T19:30:00-04:00",
+      "workflow": "Feature Enhancement",
+      "summary": "Integrated OpenAI-powered draft content generation into the Add to Portfolio workflow while keeping generated content unpublished.",
+      "epicIds": [],
+      "filesChanged": [
+        "C:\\Development\\Shared\\local-project-launcher\\server\\index.js",
+        "C:\\Development\\Shared\\local-project-launcher\\src\\main.jsx",
+        ".gitignore",
+        "src/pages/ProjectIdeaDetail.jsx",
+        "src/pages/BlogPost.jsx",
+        "src/data/projectIdeas.json",
+        "src/data/blogPosts.json"
+      ],
+      "validation": "Launcher and portfolio builds passed; live OpenAI generation succeeded; browser verified generated draft review content.",
+      "nextAction": "Review generated copy for accuracy and keep publish false until manual approval."
+    },
+    {
+      "id": "CX-2026-06-11-003",
+      "timestamp": "2026-06-11T19:10:00-04:00",
+      "workflow": "Feature Enhancement",
+      "summary": "Extended the Add to Portfolio workflow to capture local Playwright screenshots and render them in the draft project review page.",
+      "epicIds": [],
+      "filesChanged": [
+        "C:\\Development\\Shared\\local-project-launcher\\server\\index.js",
+        "C:\\Development\\Shared\\local-project-launcher\\src\\main.jsx",
+        "C:\\Development\\Shared\\local-project-launcher\\package.json",
+        "C:\\Development\\Shared\\local-project-launcher\\package-lock.json",
+        ".gitignore",
+        "src/pages/ProjectIdeaDetail.jsx",
+        "src/data/projectIdeas.json",
+        "src/data/blogPosts.json"
+      ],
+      "validation": "Launcher and portfolio builds passed; live Forge API captured 4 screenshots; browser verified the local draft screenshot gallery.",
+      "nextAction": "Review captured screenshots locally and promote only public-safe images into committed portfolio media."
+    },
     {
       "id": "CX-2026-06-11-002",
       "timestamp": "2026-06-11T18:35:00-04:00",
@@ -322,7 +409,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-06-11T18:40:00-04:00",
+    "generatedAt": "2026-06-11T22:50:00-04:00",
     "generatedBy": "Codex using Codex Operations Library",
     "sourceFiles": [
       "docs/project-management/roadmap.md",
@@ -330,7 +417,8 @@
       "docs/project-management/sprint-current.md",
       "docs/project-management/bugs.md",
       "docs/project-management/codex-activity.md",
-      "docs/project-management/lifecycle-status.md"
+      "docs/project-management/lifecycle-status.md",
+      "docs/project-management/intake-to-case-study-workflow.md"
     ]
   }
 }
