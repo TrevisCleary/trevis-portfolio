@@ -4,13 +4,13 @@
     "sourceProjectId": "trevis-portfolio",
     "slug": "trevis-portfolio",
     "title": "Trevis Portfolio",
-    "summary": "A personal portfolio site built with Vite to present professional background, project work, and case-study content in a reviewable single-page application experience.",
-    "description": "Trevis Portfolio is an in-progress personal portfolio application owned by TrevisCleary and built on Vite. The project is currently in Release Readiness with local screenshots captured for the Home, About, and Projects routes. Current readiness work focuses on governance, route and asset validation, documentation updates, and production deployment verification before any public release.",
+    "summary": "A personal portfolio site built with Vite to present professional background, project work, and case-study content in a release-ready single-page application.",
+    "description": "Trevis Portfolio is a personal portfolio application owned by TrevisCleary and built with Vite. The project is currently in Release Readiness with a running primary application service and a remediation set focused on governance, documentation, route validation, and public-launch preparation. Recent work includes adding route and asset smoke tests, updating the README for current routes and project structure, reconciling case-study routing cleanup, and documenting a repeatable intake-to-case-study promotion workflow. Remaining review items include owner-only security/content validation, production deployment verification, Vercel Deployment Protection handling, and final public review of resume, contact, screenshots, and case-study claims.",
     "image": "/portfolio-drafts/trevis-portfolio/01-home.png",
     "publish": false,
     "reviewStatus": "Needs manual review",
     "importedAt": "2026-06-11T22:29:19.591Z",
-    "updatedAt": "2026-06-12T02:39:33.540Z",
+    "updatedAt": "2026-06-14T14:55:33.068Z",
     "audience": "personal",
     "framework": "Vite",
     "owner": "TrevisCleary",
@@ -18,18 +18,19 @@
     "liveUrl": "",
     "localPath": "C:\\Development\\Projects\\trevis-portfolio",
     "lifecyclePhase": "Release Readiness",
-    "nextAction": "Remediate BUG-001, then run Release Readiness with live Vercel validation.",
-    "portfolioAngle": "Position this as a release-readiness and governance-focused portfolio build: a personal site designed not only to showcase work, but also to apply structured backlog management, content review, documentation hygiene, and deployment validation before publication.",
+    "nextAction": "Commit the current remediation set, resolve owner-only security/content review items, and disable or intentionally bypass Vercel Deployment Protection before public launch validation.",
+    "portfolioAngle": "Position this as a disciplined personal portfolio release effort: not just a static site, but a governed Vite SPA with route validation, documentation updates, content review gates, and a repeatable workflow for turning project intake into reviewable case-study material.",
     "tags": [
       "Vite",
       "personal",
       "TrevisCleary",
       "Release Readiness",
+      "Single-Page Application",
       "Portfolio",
-      "Single Page Application",
       "Governance",
       "Documentation",
-      "Frontend"
+      "Smoke Testing",
+      "Case Studies"
     ],
     "blogSlug": "trevis-portfolio-project-notes",
     "publicationChecklist": [
@@ -44,44 +45,44 @@
         "title": "Home",
         "url": "http://localhost:3206",
         "image": "/portfolio-drafts/trevis-portfolio/01-home.png",
-        "capturedAt": "2026-06-12T00:44:41.100Z",
+        "capturedAt": "2026-06-14T14:55:36.700Z",
         "publishReady": false
       },
       {
         "title": "Home",
         "url": "http://localhost:3206/",
         "image": "/portfolio-drafts/trevis-portfolio/02-home.png",
-        "capturedAt": "2026-06-12T00:44:42.572Z",
+        "capturedAt": "2026-06-14T14:55:38.115Z",
         "publishReady": false
       },
       {
         "title": "About",
         "url": "http://localhost:3206/about",
         "image": "/portfolio-drafts/trevis-portfolio/03-about.png",
-        "capturedAt": "2026-06-12T00:44:43.981Z",
+        "capturedAt": "2026-06-14T14:55:39.531Z",
         "publishReady": false
       },
       {
         "title": "Projects",
         "url": "http://localhost:3206/projects",
         "image": "/portfolio-drafts/trevis-portfolio/04-projects.png",
-        "capturedAt": "2026-06-12T00:44:45.306Z",
+        "capturedAt": "2026-06-14T14:55:40.874Z",
         "publishReady": false
       }
     ],
     "screenshotStatus": "captured",
     "screenshotNotes": "Screenshots captured from the running local app. Review before publishing.",
-    "seoTitle": "Trevis Portfolio Release Readiness Draft",
-    "seoDescription": "Draft portfolio and blog copy for a Vite-based personal portfolio project currently in release readiness, with governance, testing, documentation, and deployment validation tasks in progress.",
+    "seoTitle": "Trevis Portfolio Vite SPA Release Readiness Draft",
+    "seoDescription": "Draft portfolio and blog copy for the Trevis Portfolio project, a Vite single-page application in release readiness with governance, documentation, testing, and deployment validation work underway.",
     "aiStatus": "generated",
     "aiModel": "gpt-5.5",
-    "aiGeneratedAt": "2026-06-12T00:44:57.087Z",
+    "aiGeneratedAt": "2026-06-14T14:55:55.667Z",
     "aiReviewNotes": [
-      "Do not publish until BUG-001 is remediated and verified.",
-      "Screenshots were captured locally and require review before publication.",
-      "Public content and media review is still needed for resume, contact details, screenshots, and case-study claims.",
-      "Production deployment and direct SPA route refresh behavior on Vercel still need validation.",
-      "README updates are pending for routes, case studies, scripts, and project structure."
+      "Do not publish until the Power Automate Desktop source export governance/security item is fully resolved or formally approved.",
+      "Manual review is required for resume, contact information, screenshots, media, and case-study claims.",
+      "Verify Vercel production deployment and direct SPA route refresh behavior before public launch.",
+      "Confirm whether Vercel Deployment Protection should be disabled or intentionally bypassed for launch validation.",
+      "Screenshots were captured locally and should be reviewed before use."
     ],
     "aiMessage": "OpenAI generated draft project and blog copy."
   }
