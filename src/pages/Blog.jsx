@@ -22,14 +22,11 @@ function Blog() {
         />
       </Helmet>
 
-      <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-6">
-        Blog
-      </p>
-      <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight">
         Project notes and implementation stories.
       </h1>
       <p className="mt-6 max-w-3xl text-lg text-slate-400 leading-relaxed">
-        Drafts imported from active projects can become public writeups after review, helping turn build progress into searchable technical content.
+        Notes on healthcare technology, automation, and building useful systems.
       </p>
 
       <div className="mt-14 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -54,7 +51,7 @@ function Blog() {
                 {post.excerpt}
               </p>
               <span className="inline-flex mt-8 text-sm font-semibold text-slate-200">
-                Read draft
+                {post.publish ? "Read article" : "Read draft"}
               </span>
             </Link>
             <LocalPublishButton
@@ -66,7 +63,7 @@ function Blog() {
           </article>
         )) : (
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-8 text-slate-400">
-            No blog posts are published yet. Imported drafts appear here during local development.
+            Notes are on the way. In the meantime, <Link to="/projects" className="text-accent underline underline-offset-4">explore selected projects</Link>.
           </div>
         )}
       </div>

@@ -24,12 +24,12 @@ function Projects() {
   ];
 
   return (
-    <div className="px-10 py-20">
+    <main className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-20">
       <Helmet>
         <title>Projects | Trevis Cleary</title>
       </Helmet>
 
-      <h1 className="text-5xl font-bold mb-12">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-10">
         Projects
       </h1>
 
@@ -37,7 +37,7 @@ function Projects() {
         {projects.map((project) => (
           <article
             key={project.href}
-            className="group overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl hover:border-slate-600 hover:-translate-y-1 transition duration-300"
+            className="group overflow-hidden bg-slate-900 border border-slate-800 rounded-xl hover:border-accent/60 transition-colors"
           >
             <Link to={project.href} className="block">
               <div className="aspect-video bg-slate-950 border-b border-slate-800 overflow-hidden p-3">
@@ -85,7 +85,7 @@ function Projects() {
           </article>
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -156,11 +156,7 @@ function Resume() {
         className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
       >
         <div className="max-w-4xl">
-          <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-5">
-            Executive Resume
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight">
             Trevis Cleary
           </h1>
 
@@ -173,7 +169,7 @@ function Resume() {
           href="/Resume_Trevis_Cleary.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+          className="inline-flex items-center justify-center gap-3 bg-accent text-slate-950 px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors"
         >
           <Download size={20} />
           Download Resume

@@ -13,18 +13,14 @@ function Contact() {
         <title>Contact | Trevis Cleary</title>
       </Helmet>
 
-      <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-6">
-        Contact
-      </p>
-
-      <h1 className="text-6xl font-bold mb-8 leading-tight">
+      <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight mb-8 leading-tight">
         Let’s connect.
       </h1>
 
       <p className="text-xl text-slate-400 leading-relaxed max-w-3xl">
         I’m always interested in conversations around healthcare
         technology, automation, infrastructure modernization,
-        operational systems, and technical leadership opportunities.
+        operational systems, and the practical work of leading technology teams.
       </p>
 
       <div className="flex flex-wrap gap-6 mt-16">
@@ -52,7 +48,7 @@ function Contact() {
 
         <a
           href="mailto:connect@treviscleary.com"
-          className="flex items-center gap-4 bg-white text-black hover:opacity-90 transition rounded-2xl px-8 py-5 font-semibold"
+          className="flex items-center gap-4 bg-accent text-slate-950 hover:bg-accent-hover transition-colors rounded-lg px-8 py-5 font-semibold"
         >
           <FaEnvelope size={20} />
 

@@ -17,9 +17,13 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-black text-white">
+      <div className="min-h-screen bg-slate-950 text-slate-100">
+        <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-3 focus:text-slate-950">
+          Skip to content
+        </a>
         <Navbar />
 
+        <div id="content" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -33,6 +37,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

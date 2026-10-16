@@ -96,11 +96,7 @@ function About() {
         className="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-end"
       >
         <div>
-          <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-6">
-            About
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight max-w-5xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight max-w-5xl">
             I bridge clinical reality and technical systems.
           </h1>
         </div>
