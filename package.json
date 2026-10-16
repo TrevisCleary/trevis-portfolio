@@ -8,6 +8,8 @@
     "content": "node scripts/content-server.js",
     "dev:content": "node scripts/start-content-workspace.js",
     "build": "vite build",
+    "deploy:cloudflare": "npm run build && wrangler deploy",
+    "preview:cloudflare": "npm run build && wrangler dev",
     "lint": "eslint .",
     "test": "npm run build && node scripts/smoke-test.js",
     "test:smoke": "node scripts/smoke-test.js",
@@ -33,6 +35,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
-    "vite": "^8.0.10"
+    "vite": "^8.0.10",
+    "wrangler": "4.151.1"
   }
 }

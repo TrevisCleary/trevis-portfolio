@@ -34,7 +34,7 @@ const routes = [
 const assets = [
   { path: '/favicon.ico', contentType: 'image/x-icon' },
   { path: '/Resume_Trevis_Cleary.pdf', contentType: 'application/pdf' },
-  { path: '/images/trevis-cleary.jpg', contentType: 'image/jpeg' },
+  { path: '/images/corp-photo-trevis.png', contentType: 'image/png' },
   { path: '/images/discharge-tracker/current/02-home-review-queue.png', contentType: 'image/png' },
   { path: '/images/snf-policy-system/current/01-policy-registry.png', contentType: 'image/png' },
   { path: '/images/poc-weekly-compliance/flow-overview.svg', contentType: 'image/svg+xml' }
@@ -80,19 +80,40 @@ function serve(request, response) {
 }
 
 async function checkResponse(baseUrl, target, expectedContentType) {
-  const response = await fetch(`${baseUrl}${target}`);
+  const response = await fetch(`${baseUrl}${target}`, {
+    redirect: 'manual',
+    headers: expectedContentType === 'text/html' ? { 'Sec-Fetch-Mode': 'navigate' } : {}
+  });
   const contentType = response.headers.get('content-type') || '';
 
   if (!response.ok) {
     throw new Error(`${target} returned HTTP ${response.status}`);
   }
 
-  if (!contentType.includes(expectedContentType)) {
+  const matchesIconType = expectedContentType === 'image/x-icon'
+    && contentType.includes('image/vnd.microsoft.icon');
+  if (!contentType.includes(expectedContentType) && !matchesIconType) {
     throw new Error(`${target} returned ${contentType || 'no content-type'}, expected ${expectedContentType}`);
   }
 }
 
 async function main() {
+  if (process.env.SMOKE_BASE_URL) {
+    const baseUrl = process.env.SMOKE_BASE_URL.replace(/\/$/, '');
+    for (const route of routes) {
+      await checkResponse(baseUrl, route, 'text/html');
+    }
+    for (const asset of assets) {
+      await checkResponse(baseUrl, asset.path, asset.contentType);
+    }
+    const missing = await fetch(`${baseUrl}/images/missing-smoke-test.png`);
+    if (missing.status !== 404) {
+      throw new Error(`Missing asset returned HTTP ${missing.status}, expected 404`);
+    }
+    console.log(`Smoke tested ${routes.length} SPA routes, ${assets.length} static assets, and missing-asset handling at ${baseUrl}.`);
+    return;
+  }
+
   if (!existsSync(indexPath)) {
     throw new Error('dist/index.html does not exist. Run npm.cmd run build before smoke testing.');
   }

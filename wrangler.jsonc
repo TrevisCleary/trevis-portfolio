@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "trevis-portfolio",
+  "main": "worker/index.js",
+  "account_id": "ba525826fbcb3c8a471ed43ef8ac66ca",
+  "compatibility_date": "2026-10-16",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "treviscleary.com", "custom_domain": true },
+    { "pattern": "www.treviscleary.com", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  }
+}

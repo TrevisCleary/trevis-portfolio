@@ -134,7 +134,45 @@ Draft project ideas and blog posts are hidden in production unless their JSON re
 
 ## Deployment
 
-The site is deployed on Vercel. The `vercel.json` file includes an SPA fallback rewrite for extensionless client routes while allowing static assets such as `/favicon.ico`, `/images/...`, and `/assets/...` to serve normally.
+Cloudflare hosting is prepared on Workers with Static Assets, in the RidgePath
+Technologies account. The Cloudflare deployment has passed route and asset
+checks. **The live domains remain on Vercel until the conflicting DNS records
+are removed and the custom-domain deployment succeeds.** `wrangler.jsonc`
+configures the `trevis-portfolio` Worker, the `dist` asset directory, and both
+intended production domains:
+
+- https://treviscleary.com
+- https://www.treviscleary.com
+- Cloudflare deployment URL: https://trevis-portfolio.ridgepath-technologies.workers.dev
+
+Deploy from an authenticated Cloudflare CLI session:
+
+```bash
+npm ci
+npm test
+npm run lint
+npm run deploy:cloudflare
+SMOKE_BASE_URL=https://www.treviscleary.com npm run test:smoke
+```
+
+`worker/index.js` preserves the previous extensionless SPA fallback. Existing
+assets are served directly by Cloudflare; missing asset files return HTTP 404.
+The local content editing API remains development-only.
+
+For automatic Git deployment, connect `TrevisCleary/trevis-portfolio` in the
+Worker's **Settings → Builds**, using production branch `main`, build command
+`npm run build`, and deploy command `npx wrangler deploy` (Node.js 24).
+The initial migration used Wrangler; the Git build connection requires separate
+account access and must be verified before relying on automatic deployments.
+
+The previous Vercel project and `vercel.json` are retained for rollback. Before
+switching back, verify the intended release on Vercel, remove the Cloudflare
+custom domains, and restore the previous DNS targets (`treviscleary.com` A
+`76.76.21.21`; `www.treviscleary.com` CNAME
+`6184994a62a83660.vercel-dns-017.com`, DNS-only). Remove the custom-domain routes
+from `wrangler.jsonc` as part of rollback so a later deploy does not reclaim them.
+
+The retained Vercel rewrite is:
 
 ```json
 {
