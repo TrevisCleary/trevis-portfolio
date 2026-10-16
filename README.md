@@ -19,9 +19,9 @@ The site is built as a modern React single-page application with a dark executiv
 ## Features
 
 - Responsive portfolio layout for desktop and mobile
-- Executive-style Home, About, Resume, Projects, Blog, and Contact pages
+- Executive-style Home, About, Resume, Projects, and Contact pages
 - Dedicated case studies for Discharge Tracker, SNF Policy System, and Weekly Clinical Compliance Reporting Automation
-- Local-only draft project and blog review pages for generated portfolio intake
+- Local-only draft project review pages for generated portfolio intake
 - Screenshot gallery with full-image viewer
 - SEO page titles and metadata
 - Mobile browser theme-color metadata
@@ -35,13 +35,10 @@ src/
     LocalPublishButton.jsx
     Navbar.jsx
   data/
-    blogPosts.json
     featuredProjects.js
     projectIdeas.json
   pages/
     About.jsx
-    Blog.jsx
-    BlogPost.jsx
     Contact.jsx
     Home.jsx
     ProjectIdeaDetail.jsx
@@ -125,12 +122,12 @@ This is a React Router SPA. Key routes include:
 - `/projects/discharge-tracker`
 - `/projects/snf-policy-system`
 - `/projects/poc-weekly-compliance`
-- `/blog`
-- `/blog/:slug`
 - `/resume`
 - `/contact`
 
-Draft project ideas and blog posts are hidden in production unless their JSON records have `publish: true`. Local publish controls render only during Vite development and call the local content API started by `npm run dev:content`.
+Legacy `/blog` URLs redirect to `/projects`.
+
+Draft project ideas are hidden in production unless their JSON records have `publish: true`. Local publish controls render only during Vite development and call the local content API started by `npm run dev:content`.
 
 ## Deployment
 

@@ -8,10 +8,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const host = "127.0.0.1";
 const port = Number.parseInt(process.env.PORTFOLIO_CONTENT_API_PORT || "4306", 10);
 
-const files = {
-  project: path.join(repoRoot, "src", "data", "projectIdeas.json"),
-  blog: path.join(repoRoot, "src", "data", "blogPosts.json")
-};
+const projectFile = path.join(repoRoot, "src", "data", "projectIdeas.json");
 
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, {
@@ -45,24 +42,13 @@ async function readRequestJson(request) {
   return raw ? JSON.parse(raw) : {};
 }
 
-function findContentItem(items, kind, id) {
-  if (kind === "project") {
-    return items.find((item) => item.sourceProjectId === id || item.slug === id || item.id === id);
-  }
-
-  return items.find(
-    (item) =>
-      item.sourceProjectId === id ||
-      item.projectSlug === id ||
-      item.slug === id ||
-      item.id === id
-  );
+function findContentItem(items, id) {
+  return items.find((item) => item.sourceProjectId === id || item.slug === id || item.id === id);
 }
 
-async function updatePublishState(kind, id, publish) {
-  const filePath = files[kind];
-  const items = await readJsonArray(filePath);
-  const item = findContentItem(items, kind, id);
+async function updatePublishState(id, publish) {
+  const items = await readJsonArray(projectFile);
+  const item = findContentItem(items, id);
 
   if (!item) {
     return null;
@@ -78,19 +64,18 @@ async function updatePublishState(kind, id, publish) {
     delete item.publishedAt;
   }
 
-  await writeJsonArray(filePath, items);
+  await writeJsonArray(projectFile, items);
   return item;
 }
 
 function parsePublishRoute(url) {
-  const match = url.pathname.match(/^\/api\/(projects|blog)\/([^/]+)\/publish$/);
+  const match = url.pathname.match(/^\/api\/projects\/([^/]+)\/publish$/);
   if (!match) {
     return null;
   }
 
   return {
-    kind: match[1] === "projects" ? "project" : "blog",
-    id: decodeURIComponent(match[2])
+    id: decodeURIComponent(match[1])
   };
 }
 
@@ -107,7 +92,7 @@ const server = createServer(async (request, response) => {
       sendJson(response, 200, {
         ok: true,
         service: "trevis-portfolio-content-api",
-        writes: ["src/data/projectIdeas.json", "src/data/blogPosts.json"]
+        writes: ["src/data/projectIdeas.json"]
       });
       return;
     }
@@ -120,15 +105,15 @@ const server = createServer(async (request, response) => {
         return;
       }
 
-      const item = await updatePublishState(route.kind, route.id, body.publish);
+      const item = await updatePublishState(route.id, body.publish);
       if (!item) {
-        sendJson(response, 404, { ok: false, error: `${route.kind} draft not found.` });
+        sendJson(response, 404, { ok: false, error: "project draft not found." });
         return;
       }
 
       sendJson(response, 200, {
         ok: true,
-        kind: route.kind,
+        kind: "project",
         id: route.id,
         publish: item.publish,
         updatedAt: item.updatedAt,

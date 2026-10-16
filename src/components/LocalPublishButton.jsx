@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const contentApiBaseUrl = import.meta.env.VITE_PORTFOLIO_CONTENT_API_URL || "http://127.0.0.1:4306";
 
-function LocalPublishButton({ kind, id, published, className = "" }) {
+function LocalPublishButton({ id, published, className = "" }) {
   const [isPublished, setIsPublished] = useState(Boolean(published));
   const [status, setStatus] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -12,7 +12,6 @@ function LocalPublishButton({ kind, id, published, className = "" }) {
   }
 
   const nextPublished = !isPublished;
-  const endpointKind = kind === "blog" ? "blog" : "projects";
   const label = isPublished ? "Unpublish" : "Publish Draft";
 
   async function handlePublishClick(event) {
@@ -22,7 +21,7 @@ function LocalPublishButton({ kind, id, published, className = "" }) {
     setStatus("");
 
     try {
-      const response = await fetch(`${contentApiBaseUrl}/api/${endpointKind}/${encodeURIComponent(id)}/publish`, {
+      const response = await fetch(`${contentApiBaseUrl}/api/projects/${encodeURIComponent(id)}/publish`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json"

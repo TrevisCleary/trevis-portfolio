@@ -26,7 +26,6 @@ const routes = [
   '/projects/discharge-tracker',
   '/projects/snf-policy-system',
   '/projects/poc-weekly-compliance',
-  '/blog',
   '/resume',
   '/contact'
 ];

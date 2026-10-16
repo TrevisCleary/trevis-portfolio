@@ -178,7 +178,6 @@ function ProjectIdeaDetail() {
           </div>
 
           <LocalPublishButton
-            kind="project"
             id={idea.sourceProjectId || idea.slug}
             published={idea.publish}
           />
@@ -196,14 +195,6 @@ function ProjectIdeaDetail() {
             </div>
           ) : null}
 
-          {idea.blogSlug ? (
-            <Link
-              to={`/blog/${idea.blogSlug}`}
-              className="inline-flex w-full items-center justify-center rounded-2xl border border-slate-700 px-5 py-4 text-sm font-semibold text-slate-200 hover:bg-slate-900 transition"
-            >
-              View blog draft
-            </Link>
-          ) : null}
         </aside>
       </div>
     </main>

@@ -32,7 +32,6 @@
       "Smoke Testing",
       "Case Studies"
     ],
-    "blogSlug": "trevis-portfolio-project-notes",
     "publicationChecklist": [
       "Confirm this project can be discussed publicly.",
       "Scrub internal names, customer data, credentials, hostnames, tenant identifiers, and private URLs.",
@@ -73,7 +72,7 @@
     "screenshotStatus": "captured",
     "screenshotNotes": "Screenshots captured from the running local app. Review before publishing.",
     "seoTitle": "Trevis Portfolio Vite SPA Release Readiness Draft",
-    "seoDescription": "Draft portfolio and blog copy for the Trevis Portfolio project, a Vite single-page application in release readiness with governance, documentation, testing, and deployment validation work underway.",
+    "seoDescription": "Draft portfolio copy for the Trevis Portfolio project, a Vite single-page application in release readiness with governance, documentation, testing, and deployment validation work underway.",
     "aiStatus": "generated",
     "aiModel": "gpt-5.5",
     "aiGeneratedAt": "2026-06-14T14:55:55.667Z",
@@ -84,6 +83,6 @@
       "Confirm whether Vercel Deployment Protection should be disabled or intentionally bypassed for launch validation.",
       "Screenshots were captured locally and should be reviewed before use."
     ],
-    "aiMessage": "OpenAI generated draft project and blog copy."
+    "aiMessage": "OpenAI generated draft project copy."
   }
 ]

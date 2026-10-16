@@ -78,7 +78,6 @@ function Projects() {
             </Link>
             {project.imported ? (
               <LocalPublishButton
-                kind="project"
                 id={project.sourceProjectId || project.slug}
                 published={project.publish}
                 className="px-8 pb-8"
