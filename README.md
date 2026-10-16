@@ -12,15 +12,15 @@ The site is built as a modern React single-page application with a dark executiv
 - React Router
 - Framer Motion
 - React Helmet Async
-- Lucide React
-- React Icons
-- Vercel
+- Font Awesome
+- Cloudflare Workers
 
 ## Features
 
 - Responsive portfolio layout for desktop and mobile
 - Executive-style Home, About, Resume, Projects, and Contact pages
-- Dedicated case studies for Discharge Tracker, SNF Policy System, and Weekly Clinical Compliance Reporting Automation
+- Six case studies: Nexus, Guardian Angel, Clinical Data Relay, Discharge Tracker, Policy & Reference Library, and Clinical Compliance Reporting
+- Category filters, shared case-study layouts, section navigation, and workflow diagrams
 - Local-only draft project review pages for generated portfolio intake
 - Screenshot gallery with full-image viewer
 - SEO page titles and metadata
@@ -35,19 +35,17 @@ src/
     LocalPublishButton.jsx
     Navbar.jsx
   data/
+    projectCaseStudies.js
     featuredProjects.js
     projectIdeas.json
   pages/
     About.jsx
     Contact.jsx
     Home.jsx
+    ProjectCaseStudy.jsx
     ProjectIdeaDetail.jsx
     Projects.jsx
     Resume.jsx
-    projects/
-      DischargeTracker.jsx
-      POCWeeklyCompliance.jsx
-      SNFPolicySystem.jsx
 scripts/
   content-server.js
   serve-dist.js
@@ -119,11 +117,16 @@ This is a React Router SPA. Key routes include:
 - `/about`
 - `/projects`
 - `/projects/ideas/:slug` for local generated project drafts and reviewed published ideas
+- `/projects/nexus`
+- `/projects/guardian-angel`
+- `/projects/clinical-data-relay`
 - `/projects/discharge-tracker`
 - `/projects/snf-policy-system`
 - `/projects/poc-weekly-compliance`
 - `/resume`
 - `/contact`
+
+Case-study content lives in `src/data/projectCaseStudies.js` and renders through `ProjectCaseStudy.jsx`. The original case-study URLs remain supported. Screenshots from earlier implementations are labeled separately from current project descriptions.
 
 Legacy `/blog` URLs redirect to `/projects`.
 

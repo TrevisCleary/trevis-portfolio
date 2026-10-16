@@ -15,7 +15,7 @@ Use this workflow when a raw automation, app, or internal project artifact may b
 4. Create draft portfolio content in `src/data/projectIdeas.json` with `publish: false`.
 5. Review draft copy, screenshots, and claims against the publication checklist before making anything public.
 6. Promote only public-safe media into `public/images/<case-study>/` and reference those assets from source.
-7. Build a dedicated case-study page under `src/pages/projects/` when the project is ready for a permanent route.
+7. Add a reviewed entry to `src/data/projectCaseStudies.js` when the project is ready for a permanent `/projects/:slug` route through the shared case-study layout.
 8. Set `publish: true` only after owner review confirms the content is public-safe.
 9. Run `npm.cmd run lint`, `npm.cmd test`, and any deployment validation required for the release.
 
@@ -36,4 +36,4 @@ Use this workflow when a raw automation, app, or internal project artifact may b
 | Local generated screenshots | `public/portfolio-drafts/` | Ignored; review before promotion. |
 | Public case-study images | `public/images/<case-study>/` | Commit only approved public-safe media. |
 | Draft project records | `src/data/projectIdeas.json` | Commit with `publish: false` until approved. |
-| Permanent case-study pages | `src/pages/projects/` | Commit after source and media review. |
+| Permanent case-study content | `src/data/projectCaseStudies.js` | Commit after source and media review. |
