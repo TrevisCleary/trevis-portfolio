@@ -123,7 +123,7 @@ function Home() {
             <div className="absolute -inset-6 rounded-[2rem] bg-slate-700/20 blur-3xl" />
             <div className="relative rounded-3xl border border-slate-800 bg-slate-900/80 p-3 shadow-2xl shadow-black/30">
               <img
-                src="/images/trevis-cleary.jpg"
+                src="/images/corp-photo-trevis.png"
                 alt="Trevis Cleary"
                 className="aspect-[4/5] w-full rounded-2xl object-cover"
               />
