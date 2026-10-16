@@ -1,295 +1,172 @@
-import Icon from "../components/Icon";
-import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
+import SectionNavigation from "../components/SectionNavigation";
+
+const sections = [
+  ["overview", "Overview"],
+  ["career-path", "Career path"],
+  ["expertise", "Expertise"],
+  ["how-i-work", "How I work"],
+  ["beyond-work", "Beyond work"],
+];
+
+const career = [
+  {
+    title: "Technology foundations",
+    description: "Finance technology built my foundation in systems, support, and operational reliability.",
+  },
+  {
+    title: "Direct patient care",
+    description: "Nursing showed me how documentation, handoffs, and technology affect the time available for patients.",
+  },
+  {
+    title: "Healthcare technology leadership",
+    description: "Clinical informatics led to enterprise IT, automation, analytics, and infrastructure leadership.",
+  },
+];
+
+const expertise = [
+  {
+    icon: "workflow",
+    title: "Automation & workflows",
+    description: "Practical automation with Power Apps, Power Automate, Dataverse, and Microsoft 365.",
+  },
+  {
+    icon: "database",
+    title: "Data & analytics",
+    description: "Clean data structures and reporting that turn daily operations into useful insight.",
+  },
+  {
+    icon: "network",
+    title: "Infrastructure & systems",
+    description: "Reliable platforms, permissions, and integrations that scale across teams and facilities.",
+  },
+  {
+    icon: "healthcare",
+    title: "Healthcare technology",
+    description: "Systems grounded in clinical workflows, compliance, and the needs of frontline teams.",
+  },
+];
+
+const principles = [
+  ["Start with the work", "Understand the workflow, then reduce duplicate entry, manual steps, and difficult handoffs."],
+  ["Create shared understanding", "Connect clinicians, technical teams, executives, and vendors around a clear operational goal."],
+  ["Build for the long term", "Favor maintainable automation, durable integrations, and systems that can grow with the organization."],
+  ["Make accountability visible", "Give teams clear responsibilities and leaders an accurate view of what is happening."],
+];
 
 function About() {
-  const focusAreas = [
-    {
-      icon: <Icon name="workflow" size={24} />,
-      title: "Automation Engineering",
-      description:
-        "Designing practical automation that removes manual effort and improves reliability."
-    },
-    {
-      icon: <Icon name="healthcare" size={24} />,
-      title: "Healthcare Technology",
-      description:
-        "Building systems that reflect the pace, constraints, and accountability of healthcare operations."
-    },
-    {
-      icon: <Icon name="database" size={24} />,
-      title: "Data Architecture",
-      description:
-        "Structuring operational data so it can support workflows, reporting, and decision-making."
-    },
-    {
-      icon: <Icon name="analytics" size={24} />,
-      title: "Operational Analytics",
-      description:
-        "Turning activity, performance, and workflow data into useful enterprise visibility."
-    },
-    {
-      icon: <Icon name="network" size={24} />,
-      title: "Infrastructure Strategy",
-      description:
-        "Modernizing infrastructure with an emphasis on stability, scalability, and supportability."
-    },
-    {
-      icon: <Icon name="branch" size={24} />,
-      title: "Workflow Optimization",
-      description:
-        "Improving the handoffs, triggers, and process paths that shape daily operations."
-    },
-    {
-      icon: <Icon name="platform" size={24} />,
-      title: "Power Platform",
-      description:
-        "Using Power Apps, Power Automate, Dataverse, and Microsoft 365 to deliver usable systems quickly."
-    },
-    {
-      icon: <Icon name="server" size={24} />,
-      title: "Enterprise Systems",
-      description:
-        "Connecting platforms, permissions, reporting, and operational requirements into durable systems."
-    }
-  ];
-
-  const interests = [
-    "Electronics",
-    "Technical projects",
-    "Outdoor and property work",
-    "Family travel"
-  ];
-
-  const sectionAnimation = {
-    initial: { opacity: 0, y: 24 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.45 },
-    viewport: { once: true, margin: "-80px" }
-  };
-
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
+    <main className="section-page max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-16">
       <Helmet>
         <title>About | Trevis Cleary</title>
         <meta
           name="description"
-          content="About Trevis Cleary, a technical executive focused on healthcare technology, automation, analytics, infrastructure modernization, and enterprise systems leadership."
+          content="Trevis Cleary connects clinical experience and technical leadership through healthcare systems, automation, analytics, and infrastructure."
         />
       </Helmet>
 
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-end"
-      >
+      <header>
+        <h1 className="max-w-4xl text-4xl sm:text-5xl font-semibold tracking-tight leading-tight text-balance">
+          I bridge clinical reality and technical systems.
+        </h1>
+      </header>
+
+      <SectionNavigation sections={sections} label="About sections" />
+
+      <section id="overview" tabIndex={-1} aria-labelledby="overview-heading" className="mt-10 grid lg:grid-cols-[1.4fr_1fr] gap-6 lg:gap-12 items-center">
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight max-w-5xl">
-            I bridge clinical reality and technical systems.
-          </h1>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
-          <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
-            My career has moved through finance technology, direct patient care,
-            clinical informatics, enterprise IT, automation, analytics, and
-            infrastructure leadership. That path gives me a practical view of
-            both sides of healthcare technology: the people doing the work and
-            the systems that either support them or slow them down.
+          <h2 id="overview-heading" className="text-2xl font-semibold tracking-tight">Overview</h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-300">
+            My career spans technology, nursing, and healthcare leadership. That
+            experience helps me connect the people delivering care with the
+            systems that support them.
+          </p>
+          <p className="mt-3 leading-relaxed text-slate-400">
+            Today, I lead technical services and analytics, combining enterprise
+            strategy with hands-on work in automation, data, and infrastructure.
           </p>
         </div>
-      </motion.section>
+        <blockquote className="border-l-2 border-accent bg-slate-900 rounded-r-xl p-6 text-xl sm:text-2xl font-medium leading-relaxed text-slate-200">
+          Good technology gives people more room to focus on patients.
+        </blockquote>
+      </section>
 
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16">
-          <div>
-            <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-              Professional Background
-            </p>
-
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              A career shaped by technology, patient care, and the space between
-              them.
-            </h2>
-          </div>
-
-          <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
+      <section id="career-path" tabIndex={-1} aria-labelledby="career-heading" className="mt-12 border-t border-slate-800 pt-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+          <h2 id="career-heading" className="text-2xl font-semibold tracking-tight">Career path</h2>
+          <Link to="/resume#experience" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover">
+            Full experience <Icon name="arrowRight" size={14} />
+          </Link>
+        </div>
+        <ol className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {career.map((step, index) => (
+            <li key={step.title} className="relative border-l border-slate-700 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-5">
+              <span aria-hidden="true" className="absolute -left-1 top-1.5 h-2 w-2 rounded-full bg-accent md:left-0 md:-top-1" />
+              <p className="text-sm font-medium text-accent mb-2">{["Foundation", "Perspective", "Leadership"][index]}</p>
+              <h3 className="text-lg font-semibold">{step.title}</h3>
+              <p className="mt-2 leading-relaxed text-slate-400">{step.description}</p>
+            </li>
+          ))}
+        </ol>
+        <details className="mt-6 rounded-lg border border-slate-800 bg-slate-900">
+          <summary className="cursor-pointer px-5 py-4 text-sm font-medium text-slate-300 hover:text-accent">Read more about the transition into healthcare</summary>
+          <div className="px-5 pb-5 max-w-4xl space-y-3 text-slate-400 leading-relaxed">
             <p>
-              I started my career in the technical field shortly after college,
-              working under a finance company and building the early foundation
-              of how I think about systems, support, and operational reliability.
-              After a layoff, I took a different path and transitioned into
-              nursing, spending several years in direct patient care.
+              After starting in finance technology, a layoff led me to nursing
+              and several years in direct patient care. I saw how systems shape
+              documentation, communication, workload, and the time clinicians
+              have for patients.
             </p>
-
             <p>
-              That shift changed how I understood technology. In clinical
-              environments, systems are not abstract. They affect documentation,
-              communication, handoffs, compliance, workload, and the amount of
-              time clinicians can spend focused on patients. Working directly in
-              patient care gave me a grounded understanding of what healthcare
-              teams need from their tools.
-            </p>
-
-            <p>
-              I later used my technical background to move back into IT through
-              healthcare, first through informatics and operational systems, then
-              into automation, infrastructure modernization, analytics, and
-              enterprise technology leadership. That dual experience lets me
-              translate between clinical needs and technical solutions with a
-              practical understanding of both domains.
-            </p>
-
-            <p>
-              I am most effective in environments where clinical leaders, IT
-              teams, executives, vendors, analysts, and frontline users all need
-              the same systems to work well. My role is often to create shared
-              understanding: what the operation needs, what the technology can
-              do, and how to build something reliable enough to support both.
+              I returned to technology through healthcare informatics and
+              operational systems. That experience still guides how I translate
+              clinical needs into technical decisions.
             </p>
           </div>
-        </div>
-      </motion.section>
+        </details>
+      </section>
 
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16">
-            <div>
-              <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-                Philosophy
-              </p>
-
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                Technology should reduce friction, not add another layer of
-                work.
-              </h2>
-            </div>
-
-            <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
-              <p>
-                I approach technology as an operational enablement discipline.
-                The goal is not to add more tools for their own sake, but to
-                build systems that clarify work, standardize important
-                processes, and make the right information available at the right
-                time.
-              </p>
-
-              <p>
-                The most rewarding challenges for me are workflow modernization
-                problems: reducing labor-intensive processes, removing duplicate
-                entry, improving handoffs, and giving clinicians more room to
-                focus on patients instead of administrative friction.
-              </p>
-
-              <p>
-                That means favoring practical automation, clean data structures,
-                durable integrations, and workflows that can scale across teams
-                and facilities. Good systems should make accountability easier
-                to see, give leadership a more accurate view of what is
-                happening, and support the people closest to the work.
-              </p>
-
-              <p>
-                My leadership style is rooted in translation. I work to connect
-                the clinical language of workflow, urgency, compliance, and
-                patient care with the technical language of architecture,
-                permissions, automation, data, and systems integration.
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="mb-10">
-          <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-            Areas of Focus
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Systems, automation, data, and operational execution.
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {focusAreas.map((area, index) => (
-            <motion.article
-              key={area.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
-              viewport={{ once: true, margin: "-80px" }}
-              whileHover={{ y: -5 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-7 hover:border-slate-600 transition"
-            >
-              <div className="h-12 w-12 rounded-2xl border border-slate-700 bg-slate-950 flex items-center justify-center text-slate-300 mb-7">
-                {area.icon}
+      <section id="expertise" tabIndex={-1} aria-labelledby="expertise-heading" className="mt-12 border-t border-slate-800 pt-8">
+        <h2 id="expertise-heading" className="text-2xl font-semibold tracking-tight mb-6">Expertise</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          {expertise.map((area) => (
+            <article key={area.title} className="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900 p-5">
+              <span className="text-accent mt-1"><Icon name={area.icon} size={22} /></span>
+              <div>
+                <h3 className="text-lg font-semibold">{area.title}</h3>
+                <p className="mt-2 leading-relaxed text-slate-400">{area.description}</p>
               </div>
-
-              <h3 className="text-xl font-semibold">
-                {area.title}
-              </h3>
-
-              <p className="text-slate-400 leading-relaxed mt-4">
-                {area.description}
-              </p>
-            </motion.article>
+            </article>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
-            <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
-              Personal Interests
-            </p>
+      <section id="how-i-work" tabIndex={-1} aria-labelledby="approach-heading" className="mt-12 border-t border-slate-800 pt-8">
+        <h2 id="approach-heading" className="text-2xl font-semibold tracking-tight mb-6">How I work</h2>
+        <dl className="grid md:grid-cols-2 gap-x-10 gap-y-6">
+          {principles.map(([title, description]) => (
+            <div key={title}>
+              <dt className="text-lg font-semibold">{title}</dt>
+              <dd className="mt-2 text-slate-400 leading-relaxed">{description}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              The same curiosity shows up outside of work.
-            </h2>
-
-            <p className="text-slate-400 text-lg leading-relaxed mt-6">
-              I enjoy hands-on technical work, building and repairing things,
-              and spending time in places where systems are physical as much as
-              digital.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            {interests.map((interest) => (
-              <div
-                key={interest}
-                className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex items-center gap-4"
-              >
-                <div className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-950 flex items-center justify-center text-slate-300">
-                  {interest === "Family travel" ? (
-                    <Icon name="travel" size={20} />
-                  ) : (
-                    <Icon name="tools" size={20} />
-                  )}
-                </div>
-
-                <p className="text-slate-300 font-medium">
-                  {interest}
-                </p>
-              </div>
-            ))}
-          </div>
+      <section id="beyond-work" tabIndex={-1} aria-labelledby="personal-heading" className="mt-12 rounded-xl border border-slate-800 bg-slate-900 p-6 md:p-8">
+        <h2 id="personal-heading" className="text-2xl font-semibold tracking-tight">Beyond work</h2>
+        <p className="mt-3 max-w-3xl text-slate-400 leading-relaxed">
+          The same curiosity carries into electronics, hands-on technical
+          projects, and outdoor and property work. Family travel gives me time
+          to step away and explore.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+          <span className="inline-flex items-center gap-2"><Icon name="tools" size={16} />Building and repairing</span>
+          <span className="inline-flex items-center gap-2"><Icon name="travel" size={16} />Family travel</span>
         </div>
-      </motion.section>
-
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
-        <div className="border-t border-slate-800 pt-12">
-          <p className="text-2xl md:text-3xl text-slate-300 leading-relaxed max-w-5xl">
-            I care about building systems that make healthcare operations easier
-            to understand, easier to manage, and more supportive of the people
-            delivering care. The best technology does not pull attention away
-            from patients; it clears a better path back to them.
-          </p>
-        </div>
-      </motion.section>
+      </section>
     </main>
   );
 }

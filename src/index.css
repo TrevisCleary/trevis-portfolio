@@ -42,8 +42,8 @@ body {
   outline-offset: 5px;
 }
 
-.resume-page section[id] {
-  scroll-margin-top: calc(var(--resume-nav-height, 9rem) + 1rem);
+.section-page section[id] {
+  scroll-margin-top: calc(var(--section-nav-height, 9rem) + 1rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -145,7 +145,7 @@ function Resume() {
   };
 
   return (
-    <main className="resume-page max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
+    <main className="section-page max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
       <Helmet>
         <title>Resume | Trevis Cleary</title>
       </Helmet>
