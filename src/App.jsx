@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import ReturnToTop from "./components/ReturnToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         </div>
+        <ReturnToTop />
       </div>
     </BrowserRouter>
   );

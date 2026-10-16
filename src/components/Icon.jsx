@@ -15,6 +15,7 @@ import { faWrench } from "@fortawesome/free-solid-svg-icons/faWrench";
 import { faShieldHalved } from "@fortawesome/free-solid-svg-icons/faShieldHalved";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons/faPeopleGroup";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
 import { faBoxArchive } from "@fortawesome/free-solid-svg-icons/faBoxArchive";
@@ -59,6 +60,7 @@ const icons = {
   security: faShieldHalved,
   leadership: faPeopleGroup,
   arrowRight: faArrowRight,
+  arrowUp: faArrowUp,
   externalLink: faArrowUpRightFromSquare,
   automation: faRobot,
   archive: faBoxArchive,
