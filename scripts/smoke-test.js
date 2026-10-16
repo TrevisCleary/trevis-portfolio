@@ -32,6 +32,8 @@ const routes = [
 
 const assets = [
   { path: '/favicon.ico', contentType: 'image/x-icon' },
+  { path: '/favicon-32x32.png', contentType: 'image/png' },
+  { path: '/apple-touch-icon.png', contentType: 'image/png' },
   { path: '/Resume_Trevis_Cleary.pdf', contentType: 'application/pdf' },
   { path: '/images/corp-photo-trevis.png', contentType: 'image/png' },
   { path: '/images/discharge-tracker/current/02-home-review-queue.png', contentType: 'image/png' },
