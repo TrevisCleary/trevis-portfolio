@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import Icon from "./Icon";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,7 +45,7 @@ function Navbar() {
           className="md:hidden p-2 text-slate-300"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <Icon name="close" size={22} /> : <Icon name="menu" size={22} />}
         </button>
       </div>
 

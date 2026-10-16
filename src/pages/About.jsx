@@ -1,64 +1,53 @@
-import {
-  BarChart3,
-  CircuitBoard,
-  Database,
-  GitBranch,
-  HeartPulse,
-  Network,
-  Plane,
-  Server,
-  Workflow,
-  Wrench
-} from "lucide-react";
+import Icon from "../components/Icon";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 function About() {
   const focusAreas = [
     {
-      icon: <Workflow size={24} />,
+      icon: <Icon name="workflow" size={24} />,
       title: "Automation Engineering",
       description:
         "Designing practical automation that removes manual effort and improves reliability."
     },
     {
-      icon: <HeartPulse size={24} />,
+      icon: <Icon name="healthcare" size={24} />,
       title: "Healthcare Technology",
       description:
         "Building systems that reflect the pace, constraints, and accountability of healthcare operations."
     },
     {
-      icon: <Database size={24} />,
+      icon: <Icon name="database" size={24} />,
       title: "Data Architecture",
       description:
         "Structuring operational data so it can support workflows, reporting, and decision-making."
     },
     {
-      icon: <BarChart3 size={24} />,
+      icon: <Icon name="analytics" size={24} />,
       title: "Operational Analytics",
       description:
         "Turning activity, performance, and workflow data into useful enterprise visibility."
     },
     {
-      icon: <Network size={24} />,
+      icon: <Icon name="network" size={24} />,
       title: "Infrastructure Strategy",
       description:
         "Modernizing infrastructure with an emphasis on stability, scalability, and supportability."
     },
     {
-      icon: <GitBranch size={24} />,
+      icon: <Icon name="branch" size={24} />,
       title: "Workflow Optimization",
       description:
         "Improving the handoffs, triggers, and process paths that shape daily operations."
     },
     {
-      icon: <CircuitBoard size={24} />,
+      icon: <Icon name="platform" size={24} />,
       title: "Power Platform",
       description:
         "Using Power Apps, Power Automate, Dataverse, and Microsoft 365 to deliver usable systems quickly."
     },
     {
-      icon: <Server size={24} />,
+      icon: <Icon name="server" size={24} />,
       title: "Enterprise Systems",
       description:
         "Connecting platforms, permissions, reporting, and operational requirements into durable systems."
@@ -276,9 +265,9 @@ function About() {
               >
                 <div className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-950 flex items-center justify-center text-slate-300">
                   {interest === "Family travel" ? (
-                    <Plane size={20} />
+                    <Icon name="travel" size={20} />
                   ) : (
-                    <Wrench size={20} />
+                    <Icon name="tools" size={20} />
                   )}
                 </div>
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 import { Helmet } from "react-helmet-async";
 import LocalPublishButton from "../components/LocalPublishButton";
 import blogPosts from "../data/blogPosts.json";
@@ -42,7 +43,7 @@ function Blog() {
                     Draft
                   </span>
                 ) : null}
-                <span className="text-sm text-slate-500">{post.date || "Needs review"}</span>
+                <span className="inline-flex items-center gap-2 text-sm text-slate-500"><Icon name="calendar" size={14} />{post.date || "Needs review"}</span>
               </div>
               <h2 className="text-2xl font-semibold leading-snug group-hover:text-white">
                 {post.title}
@@ -50,8 +51,9 @@ function Blog() {
               <p className="mt-4 text-slate-400 leading-relaxed">
                 {post.excerpt}
               </p>
-              <span className="inline-flex mt-8 text-sm font-semibold text-slate-200">
+              <span className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-slate-200">
                 {post.publish ? "Read article" : "Read draft"}
+                <Icon name="arrowRight" size={14} />
               </span>
             </Link>
             <LocalPublishButton

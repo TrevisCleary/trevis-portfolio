@@ -1,18 +1,4 @@
-import {
-  Bot,
-  Database,
-  Download,
-  FileArchive,
-  FileCheck2,
-  FileText,
-  FolderSync,
-  Layers3,
-  ShieldCheck,
-  Sparkles,
-  Workflow,
-  X,
-  ZoomIn
-} from "lucide-react";
+import Icon from "../../components/Icon";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -33,37 +19,37 @@ function SNFPolicySystem() {
 
   const features = [
     {
-      icon: <FileArchive size={24} />,
+      icon: <Icon name="archive" size={24} />,
       title: "Policy Registry",
       description:
         "Centralized policy tracking for department, document type, category, status, revision, dates, and publish state."
     },
     {
-      icon: <Sparkles size={24} />,
+      icon: <Icon name="drafting" size={24} />,
       title: "AI-Assisted Drafting",
       description:
         "Users can generate standardized policy content from prompts or source text while keeping provider keys server-side."
     },
     {
-      icon: <FileText size={24} />,
+      icon: <Icon name="document" size={24} />,
       title: "Document Import",
       description:
         "Existing DOCX and PDF policy files can be imported, parsed, and converted into editable registry entries."
     },
     {
-      icon: <Workflow size={24} />,
+      icon: <Icon name="workflow" size={24} />,
       title: "Auto Ingest",
       description:
         "Completed policies can be added to the registry without forcing a full rewrite through the AI generation flow."
     },
     {
-      icon: <FolderSync size={24} />,
+      icon: <Icon name="folder" size={24} />,
       title: "SharePoint Publishing",
       description:
         "Completed Word documents and companion metadata JSON files are written to OneDrive-synced SharePoint folders."
     },
     {
-      icon: <Layers3 size={24} />,
+      icon: <Icon name="layers" size={24} />,
       title: "Structured Editing",
       description:
         "Saved policies open into focused metadata, description, revision, and section editing panels."
@@ -72,37 +58,37 @@ function SNFPolicySystem() {
 
   const stack = [
     {
-      icon: <FileCheck2 size={24} />,
+      icon: <Icon name="fileCheck" size={24} />,
       name: "React Static App",
       detail:
         "A lightweight browser interface handles the registry, generator, ingest workflow, and policy editor."
     },
     {
-      icon: <Database size={24} />,
+      icon: <Icon name="database" size={24} />,
       name: "Node + SQLite",
       detail:
         "The local server persists registry data, custom departments, categories, metadata, and generated policy records."
     },
     {
-      icon: <Bot size={24} />,
+      icon: <Icon name="automation" size={24} />,
       name: "AI Provider Proxy",
       detail:
         "OpenAI and Anthropic requests are proxied through the server so API keys never reach the browser."
     },
     {
-      icon: <Download size={24} />,
+      icon: <Icon name="download" size={24} />,
       name: "DOCX Generation",
       detail:
         "A custom OpenXML builder uses JSZip to create standardized downloadable Word documents."
     },
     {
-      icon: <FileText size={24} />,
+      icon: <Icon name="document" size={24} />,
       name: "PDF And DOCX Parsing",
       detail:
         "PDF.js and document extraction utilities support importing and auto-ingesting existing source material."
     },
     {
-      icon: <ShieldCheck size={24} />,
+      icon: <Icon name="security" size={24} />,
       name: "SharePoint Metadata",
       detail:
         "Publishing writes metadata JSON for Power Automate to keep document library fields aligned."
@@ -240,7 +226,7 @@ function SNFPolicySystem() {
             className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
           <span className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-black/65 px-4 py-2 text-sm text-slate-100 backdrop-blur">
-            <ZoomIn size={16} /> View workflow
+            <Icon name="zoomIn" size={16} /> View workflow
           </span>
         </button>
       </motion.section>
@@ -272,7 +258,7 @@ function SNFPolicySystem() {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {features.map((feature) => (
             <div key={feature.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <div className="mb-4 text-cyan-300">{feature.icon}</div>
+              <div className="mb-4 text-accent">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-400 leading-relaxed">{feature.description}</p>
             </div>
@@ -297,7 +283,7 @@ function SNFPolicySystem() {
                   className="w-full aspect-video object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
                 <span className="absolute top-4 right-4 rounded-full bg-black/60 p-2 text-slate-100 opacity-0 group-hover:opacity-100 transition">
-                  <ZoomIn size={18} />
+                  <Icon name="zoomIn" size={18} />
                 </span>
               </div>
               <div className="p-5">
@@ -314,7 +300,7 @@ function SNFPolicySystem() {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {stack.map((item) => (
             <div key={item.name} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <div className="mb-4 text-cyan-300">{item.icon}</div>
+              <div className="mb-4 text-accent">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{item.name}</h3>
               <p className="text-slate-400 leading-relaxed">{item.detail}</p>
             </div>
@@ -333,7 +319,7 @@ function SNFPolicySystem() {
             onClick={() => setSelectedImage(null)}
             aria-label="Close screenshot"
           >
-            <X size={22} />
+            <Icon name="close" size={22} />
           </button>
           <div
             className="max-w-6xl w-full rounded-3xl border border-slate-800 bg-slate-950 overflow-hidden"

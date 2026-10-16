@@ -1,20 +1,4 @@
-import {
-  Activity,
-  BarChart3,
-  CheckCircle2,
-  ClipboardList,
-  Database,
-  Download,
-  ExternalLink,
-  GitBranch,
-  LockKeyhole,
-  MessageSquareText,
-  MonitorPlay,
-  ShieldCheck,
-  Workflow,
-  X,
-  ZoomIn
-} from "lucide-react";
+import Icon from "../../components/Icon";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -35,37 +19,37 @@ function DischargeTracker() {
 
   const features = [
     {
-      icon: <Workflow size={24} />,
+      icon: <Icon name="workflow" size={24} />,
       title: "Role-Based Review Workflow",
       description:
         "Facility, regional, VP, CNO, and admin users see actions that match their workflow responsibility."
     },
     {
-      icon: <ClipboardList size={24} />,
+      icon: <Icon name="clipboard" size={24} />,
       title: "Discharge Review Queue",
       description:
         "Folder-style tabs, filters, sorting, status chips, deleted record recovery, and facility-scoped visibility."
     },
     {
-      icon: <MessageSquareText size={24} />,
+      icon: <Icon name="message" size={24} />,
       title: "Comments And Update Log",
       description:
         "Chat-style user comments are separated from system update history for cleaner collaboration and audit review."
     },
     {
-      icon: <BarChart3 size={24} />,
+      icon: <Icon name="analytics" size={24} />,
       title: "Analytics Dashboard",
       description:
         "Monthly analytics include clickable metrics, supporting record tables, CSV export, thresholds, and trend context."
     },
     {
-      icon: <ShieldCheck size={24} />,
+      icon: <Icon name="security" size={24} />,
       title: "Admin Portal",
       description:
         "Administrative tools manage users, facilities, release notes, data sync, analytics thresholds, and demo reset."
     },
     {
-      icon: <MonitorPlay size={24} />,
+      icon: <Icon name="play" size={24} />,
       title: "Demo Sandbox",
       description:
         "A launchable fictional-data environment supports portfolio walkthroughs and safe experimentation without production writes."
@@ -74,32 +58,32 @@ function DischargeTracker() {
 
   const stack = [
     {
-      icon: <Activity size={24} />,
+      icon: <Icon name="activity" size={24} />,
       name: "React + Vite",
       detail: "Responsive application shell, record workflows, analytics views, admin screens, and demo launch experience."
     },
     {
-      icon: <Database size={24} />,
+      icon: <Icon name="database" size={24} />,
       name: "PostgreSQL",
       detail: "Durable storage for discharge records, comments, users, facilities, audit events, thresholds, and release notes."
     },
     {
-      icon: <GitBranch size={24} />,
+      icon: <Icon name="branch" size={24} />,
       name: "Express API",
       detail: "Server endpoints for bootstrap, workflow mutations, admin management, data reloads, audit, and support."
     },
     {
-      icon: <LockKeyhole size={24} />,
+      icon: <Icon name="lock" size={24} />,
       name: "Microsoft Entra",
       detail: "MSAL-based authentication with API scopes and role-aware application access."
     },
     {
-      icon: <Download size={24} />,
+      icon: <Icon name="download" size={24} />,
       name: "SharePoint Migration",
       detail: "CSV import and reload tooling translates legacy SharePoint list extracts into normalized database records."
     },
     {
-      icon: <MessageSquareText size={24} />,
+      icon: <Icon name="message" size={24} />,
       name: "Power Automate",
       detail: "HTTP-triggered notification flow routes support, demo, developer, and production failure messages."
     }
@@ -296,7 +280,7 @@ function DischargeTracker() {
                   Role-aware discharge review queue
                 </p>
               </div>
-              <ZoomIn className="text-slate-400 group-hover:text-white transition" size={20} />
+              <Icon name="zoomIn" className="text-slate-400 group-hover:text-white transition" size={20} />
             </div>
           </motion.button>
         </div>
@@ -368,7 +352,7 @@ function DischargeTracker() {
                 key={item}
                 className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-4"
               >
-                <CheckCircle2 className="text-lime-300 shrink-0" size={22} />
+                <Icon name="check" className="text-accent shrink-0" size={22} />
                 <p className="text-slate-300">{item}</p>
               </div>
             ))}
@@ -393,7 +377,7 @@ function DischargeTracker() {
               whileHover={{ y: -5 }}
               className="bg-slate-900 border border-slate-800 rounded-3xl p-7 hover:border-slate-600 transition"
             >
-              <div className="text-lime-300 mb-6">{feature.icon}</div>
+              <div className="text-accent mb-6">{feature.icon}</div>
               <h3 className="text-xl font-semibold">{feature.title}</h3>
               <p className="text-slate-400 leading-relaxed mt-4">
                 {feature.description}
@@ -450,7 +434,7 @@ function DischargeTracker() {
                         Click to view full image
                       </p>
                     </div>
-                    <ZoomIn className="mt-0.5 shrink-0 text-slate-300" size={18} />
+                    <Icon name="zoomIn" className="mt-0.5 shrink-0 text-slate-300" size={18} />
                   </div>
                 </div>
               </figcaption>
@@ -475,7 +459,7 @@ function DischargeTracker() {
               key={item.name}
               className="bg-slate-900 border border-slate-800 rounded-3xl p-7"
             >
-              <div className="text-lime-300 mb-5">{item.icon}</div>
+              <div className="text-accent mb-5">{item.icon}</div>
               <h3 className="font-semibold text-lg">{item.name}</h3>
               <p className="text-slate-500 leading-relaxed mt-3 text-sm">
                 {item.detail}
@@ -544,7 +528,7 @@ function DischargeTracker() {
                 className="rounded-2xl border border-slate-800 p-3 text-slate-300 hover:bg-slate-900 transition"
                 aria-label="Close screenshot viewer"
               >
-                <X size={20} />
+                <Icon name="close" size={20} />
               </button>
             </div>
 
@@ -569,7 +553,7 @@ function DischargeTracker() {
                   className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-900 transition"
                 >
                   Open full image
-                  <ExternalLink size={16} />
+                  <Icon name="externalLink" size={16} />
                 </a>
               </aside>
             </div>

@@ -1,14 +1,4 @@
-import {
-  AlertTriangle,
-  CalendarClock,
-  ClipboardCheck,
-  FileSpreadsheet,
-  MailCheck,
-  MonitorCog,
-  Route,
-  ShieldCheck,
-  Workflow
-} from "lucide-react";
+import Icon from "../../components/Icon";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -24,37 +14,37 @@ function POCWeeklyCompliance() {
 
   const flowSteps = [
     {
-      icon: <CalendarClock size={24} />,
+      icon: <Icon name="calendar" size={24} />,
       title: "Scheduled Run",
       description:
         "A weekly cloud flow starts the reporting process on a fixed cadence so compliance communication is not dependent on a manual reminder."
     },
     {
-      icon: <MonitorCog size={24} />,
+      icon: <Icon name="desktop" size={24} />,
       title: "Desktop Report Execution",
       description:
         "An attended desktop flow signs into a clinical reporting portal, selects the required facility scope, and generates seven-day compliance extracts."
     },
     {
-      icon: <FileSpreadsheet size={24} />,
+      icon: <Icon name="spreadsheet" size={24} />,
       title: "Excel Data Processing",
       description:
         "Downloaded report files are opened, read, and transformed into structured HTML rows for state-level reporting."
     },
     {
-      icon: <ClipboardCheck size={24} />,
+      icon: <Icon name="clipboardCheck" size={24} />,
       title: "Threshold Highlighting",
       description:
         "Daily and grand-total percentages are evaluated against a 95 percent target, with below-target values emphasized for follow-up."
     },
     {
-      icon: <MailCheck size={24} />,
+      icon: <Icon name="mailCheck" size={24} />,
       title: "State-Specific Distribution",
       description:
         "The cloud flow combines generated table content with standardized introduction and recommendation blocks before sending separate state emails."
     },
     {
-      icon: <AlertTriangle size={24} />,
+      icon: <Icon name="warning" size={24} />,
       title: "Failure Notification",
       description:
         "A high-importance failure path routes an alert if the final email chain fails, is skipped, or times out."
@@ -93,19 +83,19 @@ function POCWeeklyCompliance() {
 
   const safeguards = [
     {
-      icon: <ShieldCheck size={22} />,
+      icon: <Icon name="security" size={22} />,
       title: "Sensitive Data Scrubbed",
       description:
         "Portfolio framing omits internal email addresses, tenant identifiers, machine names, facility details, and credential material."
     },
     {
-      icon: <Route size={22} />,
+      icon: <Icon name="route" size={22} />,
       title: "Maintainability Notes",
       description:
         "The export exposes where selectors, download paths, and report names create brittle dependencies that should be documented or modernized."
     },
     {
-      icon: <Workflow size={22} />,
+      icon: <Icon name="workflow" size={22} />,
       title: "Modernization Candidate",
       description:
         "The flow is a strong candidate for replacing UI automation with direct reporting APIs or a controlled data export pipeline if available."
@@ -206,7 +196,7 @@ function POCWeeklyCompliance() {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
           {flowSteps.map((step) => (
             <div key={step.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-400/10 text-emerald-200">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 text-accent">
                 {step.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
@@ -239,7 +229,7 @@ function POCWeeklyCompliance() {
         <div className="grid md:grid-cols-3 gap-6">
           {safeguards.map((item) => (
             <div key={item.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <div className="mb-4 text-emerald-200">{item.icon}</div>
+              <div className="mb-4 text-accent">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
               <p className="text-slate-400 leading-relaxed">{item.description}</p>
             </div>

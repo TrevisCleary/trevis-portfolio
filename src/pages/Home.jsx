@@ -1,12 +1,4 @@
-import {
-  Server,
-  Workflow,
-  ShieldCheck,
-  Database,
-  ChartNoAxesCombined,
-  Network,
-  ArrowUpRight
-} from "lucide-react";
+import Icon from "../components/Icon";
 
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -15,37 +7,37 @@ import { featuredProjects } from "../data/featuredProjects";
 function Home() {
   const skills = [
     {
-      icon: <Workflow size={32} />,
+      icon: <Icon name="workflow" size={28} />,
       title: "Automation",
       description:
         "Power Platform, PowerShell, Microsoft Graph, workflow engineering"
     },
     {
-      icon: <Server size={32} />,
+      icon: <Icon name="server" size={28} />,
       title: "Infrastructure",
       description:
         "Enterprise systems, virtualization, cloud platforms, networking"
     },
     {
-      icon: <ShieldCheck size={32} />,
+      icon: <Icon name="security" size={28} />,
       title: "Security",
       description:
         "Governance, identity management, access control, compliance"
     },
     {
-      icon: <Database size={32} />,
+      icon: <Icon name="database" size={28} />,
       title: "Data & Analytics",
       description:
         "Power BI, reporting pipelines, operational analytics"
     },
     {
-      icon: <ChartNoAxesCombined size={32} />,
+      icon: <Icon name="leadership" size={28} />,
       title: "Leadership",
       description:
         "Strategic planning, vendor management, operational modernization"
     },
     {
-      icon: <Network size={32} />,
+      icon: <Icon name="network" size={28} />,
       title: "Systems Strategy",
       description:
         "Scalable healthcare technology and operational architecture"
@@ -79,14 +71,15 @@ function Home() {
                 className="inline-flex items-center gap-3 bg-accent text-slate-950 px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors"
               >
                 View Projects
-                <ArrowUpRight size={18} aria-hidden="true" />
+                <Icon name="arrowRight" size={18} aria-hidden="true" />
               </Link>
 
               <Link
                 to="/resume"
-                className="border border-slate-700 px-6 py-3 rounded-lg text-slate-200 hover:bg-slate-900 transition-colors"
+                className="inline-flex items-center gap-3 border border-slate-700 px-6 py-3 rounded-lg text-slate-200 hover:bg-slate-900 transition-colors"
               >
                 Resume
+                <Icon name="document" size={16} />
               </Link>
             </div>
           </div>
@@ -172,9 +165,9 @@ function Home() {
 
             <Link
               to="/projects"
-              className="text-accent hover:text-accent-hover transition-colors"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors"
             >
-              View All →
+              View All <Icon name="arrowRight" size={14} />
             </Link>
           </div>
 
@@ -192,7 +185,7 @@ function Home() {
                 <p className="text-slate-400 leading-relaxed">
                   {project.description}
                 </p>
-                <span className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-accent">Read case study <ArrowUpRight size={16} aria-hidden="true" /></span>
+                <span className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-accent">Read case study <Icon name="arrowRight" size={16} aria-hidden="true" /></span>
               </Link>
             ))}
           </div>

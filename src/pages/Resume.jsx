@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import Icon from "../components/Icon";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -171,7 +171,7 @@ function Resume() {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-3 bg-accent text-slate-950 px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors"
         >
-          <Download size={20} />
+          <Icon name="download" size={20} />
           Download Resume
         </a>
       </motion.header>

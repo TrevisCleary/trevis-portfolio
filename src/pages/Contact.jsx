@@ -1,8 +1,4 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope
-} from "react-icons/fa";
+import Icon from "../components/Icon";
 
 import { Helmet } from "react-helmet-async";
 
@@ -30,7 +26,7 @@ function Contact() {
           rel="noopener noreferrer"
           className="flex items-center gap-4 bg-slate-900 border border-slate-800 hover:border-slate-600 transition rounded-2xl px-8 py-5"
         >
-          <FaLinkedin size={24} />
+          <Icon name="linkedin" size={24} />
 
           <span>LinkedIn</span>
         </a>
@@ -41,7 +37,7 @@ function Contact() {
           rel="noopener noreferrer"
           className="flex items-center gap-4 bg-slate-900 border border-slate-800 hover:border-slate-600 transition rounded-2xl px-8 py-5"
         >
-          <FaGithub size={24} />
+          <Icon name="github" size={24} />
 
           <span>GitHub</span>
         </a>
@@ -50,7 +46,7 @@ function Contact() {
           href="mailto:connect@treviscleary.com"
           className="flex items-center gap-4 bg-accent text-slate-950 hover:bg-accent-hover transition-colors rounded-lg px-8 py-5 font-semibold"
         >
-          <FaEnvelope size={20} />
+          <Icon name="email" size={20} />
 
           <span>Email</span>
         </a>

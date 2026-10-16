@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 import { Helmet } from "react-helmet-async";
 import LocalPublishButton from "../components/LocalPublishButton";
 import { featuredProjects } from "../data/featuredProjects";
@@ -68,9 +69,10 @@ function Projects() {
                 </p>
 
                 <div
-                  className="inline-flex items-center justify-center mt-8 border border-slate-700 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-200 group-hover:bg-slate-800 transition"
+                  className="inline-flex items-center justify-center gap-3 mt-8 border border-slate-700 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-200 group-hover:bg-slate-800 transition"
                 >
                   View {project.label}
+                  <Icon name="arrowRight" size={14} />
                 </div>
               </div>
             </Link>
