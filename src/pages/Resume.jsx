@@ -1,4 +1,5 @@
 import Icon from "../components/Icon";
+import ResumeNavigation from "../components/ResumeNavigation";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -144,7 +145,7 @@ function Resume() {
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
+    <main className="resume-page max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
       <Helmet>
         <title>Resume | Trevis Cleary</title>
       </Helmet>
@@ -175,8 +176,9 @@ function Resume() {
           Download Resume
         </a>
       </motion.header>
+      <ResumeNavigation />
 
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
+      <motion.section id="summary" tabIndex={-1} aria-label="Professional summary" {...sectionAnimation} className="mt-14 md:mt-16">
         <div className="grid lg:grid-cols-[0.8fr_1.4fr] gap-10 lg:gap-16">
           <div>
             <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
@@ -202,7 +204,7 @@ function Resume() {
         </div>
       </motion.section>
 
-      <motion.section {...sectionAnimation} className="mt-20 md:mt-24">
+      <motion.section id="capabilities" tabIndex={-1} aria-label="Core capabilities" {...sectionAnimation} className="mt-20 md:mt-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
             <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
@@ -228,7 +230,7 @@ function Resume() {
         </div>
       </motion.section>
 
-      <section className="mt-20 md:mt-24">
+      <section id="experience" tabIndex={-1} aria-label="Experience" className="mt-20 md:mt-24">
         <div className="mb-10">
           <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
             Experience
@@ -299,6 +301,9 @@ function Resume() {
 
       <div className="mt-20 md:mt-24 grid lg:grid-cols-2 gap-8">
         <motion.section
+          id="education"
+          tabIndex={-1}
+          aria-label="Education"
           {...sectionAnimation}
           className="bg-slate-900 border border-slate-800 rounded-3xl p-7 md:p-10"
         >
@@ -321,6 +326,9 @@ function Resume() {
         </motion.section>
 
         <motion.section
+          id="background"
+          tabIndex={-1}
+          aria-label="Additional experience"
           {...sectionAnimation}
           className="bg-slate-900 border border-slate-800 rounded-3xl p-7 md:p-10"
         >
@@ -343,7 +351,7 @@ function Resume() {
         </motion.section>
       </div>
 
-      <motion.section {...sectionAnimation} className="mt-8">
+      <motion.section id="interests" tabIndex={-1} aria-label="Interests" {...sectionAnimation} className="mt-8">
         <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 md:p-10">
           <p className="uppercase tracking-[0.3em] text-slate-500 text-sm mb-4">
             Interests

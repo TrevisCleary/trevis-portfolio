@@ -42,6 +42,10 @@ body {
   outline-offset: 5px;
 }
 
+.resume-page section[id] {
+  scroll-margin-top: calc(var(--resume-nav-height, 9rem) + 1rem);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
