@@ -134,12 +134,10 @@ Draft project ideas and blog posts are hidden in production unless their JSON re
 
 ## Deployment
 
-Cloudflare hosting is prepared on Workers with Static Assets, in the RidgePath
-Technologies account. The Cloudflare deployment has passed route and asset
-checks. **The live domains remain on Vercel until the conflicting DNS records
-are removed and the custom-domain deployment succeeds.** `wrangler.jsonc`
-configures the `trevis-portfolio` Worker, the `dist` asset directory, and both
-intended production domains:
+The site is hosted on Cloudflare Workers with Static Assets, in the RidgePath
+Technologies account. The live domains moved from Vercel on October 16, 2026.
+`wrangler.jsonc` configures the `trevis-portfolio` Worker, the `dist` asset
+directory, and both production domains:
 
 - https://treviscleary.com
 - https://www.treviscleary.com
@@ -159,11 +157,10 @@ SMOKE_BASE_URL=https://www.treviscleary.com npm run test:smoke
 assets are served directly by Cloudflare; missing asset files return HTTP 404.
 The local content editing API remains development-only.
 
-For automatic Git deployment, connect `TrevisCleary/trevis-portfolio` in the
-Worker's **Settings → Builds**, using production branch `main`, build command
+The GitHub build connection is configured in the Worker's **Settings → Builds**
+for `TrevisCleary/trevis-portfolio`, production branch `main`, build command
 `npm run build`, and deploy command `npx wrangler deploy` (Node.js 24).
-The initial migration used Wrangler; the Git build connection requires separate
-account access and must be verified before relying on automatic deployments.
+Check the Cloudflare build history after pushing changes to verify deployment.
 
 The previous Vercel project and `vercel.json` are retained for rollback. Before
 switching back, verify the intended release on Vercel, remove the Cloudflare
